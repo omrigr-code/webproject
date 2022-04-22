@@ -146,19 +146,18 @@ input[type=checkbox]{
 
    }
 
-
-   #home{
+/*
+#home .col-{
     width: 100%;
     float: left;
-    height: 100vh;
+    height: auto;
     position: relative;
-   background-image: url("../images/Swiss\ House\ _\ سويس\ هاوس.jpg"),url("../images/Balsamic\ Steak\ Gorgonzola\ Salad\ with\ Grilled\ Corn.jpg");
-   background-size:  500px;
+    background-size:  500px;
    background-position:right,left;
    position: relative;
    background-repeat: no-repeat;
    background-color: white;
-}
+}*/
 
 #home .center{
     position: absolute;
@@ -300,12 +299,12 @@ input[type=checkbox]{
 #About{
     width: 100%;
     float: left;
-    height: 100vh;
+    height: auto;
     position: relative;
     background-color: white;
 }
 
-#About .aboutheader{
+#About .col-{
    position: absolute;
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    text-align: center;
@@ -317,24 +316,25 @@ input[type=checkbox]{
    padding: 30px;
    width: 50%;
 }
-#About .aboutheader h1{
+#About h1{
    font-size: 40px;
-   color: #CC6666;
+   color: #ff0000;
 }
-#About .aboutheader p{
+#About p{
    font-size: 25px;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-.newsForm{
+/*.newsForm{
    margin-top: 10%;
    margin-right: 5%;
    margin-bottom: 10px;
    margin-left: 7%;
-}
+}*/
 body { background:rgb(30,30,40); }
-form { max-width:420px; margin:200px auto;margin-left: 50px; }
+/*form { max-width:420px; margin:200px auto;margin-left: 50px; }
+*/
 
 .feedback-input {
  color:black;
