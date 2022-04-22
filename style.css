@@ -188,7 +188,7 @@ input[type=checkbox] {
 
 #home .img-me {
     max-width: 100%;
-    max-height: min-content;
+    max-height: max-content;
 }
 
 #home .center {
@@ -227,7 +227,8 @@ input[type=checkbox] {
 /*arrow*/
 #home .arrow {
     left: 50%;
-    margin-top: 10%;
+    margin-top: 20%;
+    margin-bottom: 20%;
     position: relative;
 }
 

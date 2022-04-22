@@ -1,0 +1,29 @@
+     <!--
+        <div class="header">
+            <a href="#home" class="logo">
+                <img src="../images/Healthy Food Logo With Plate Spoon And Fork Line Art Template Download on Pngtree.jpg" alt=""width="80" height="80">
+                <div class="iconbar"> 
+                    <a href="www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="www.instergram.com"><i class="fa-brands fa-instagram-square"></i></a>
+                    <a href="mailto:tomer233@hotmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="www.youtube.com"><i class="fa-brands fa-youtube"></i></i></a>
+                </div>
+            </a>
+            <ul id="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#Idea">Idea</a></li>
+                <li><a href="#About">About Us</a></li>
+                <li><div class="dropdown">
+                        <button class="dropbtn">Recipes</button>
+                        <div class="dropdown-content">
+                        <a href="#">Mexican</a>
+                        <a href="#">Italian</a>
+                        <a href="#">Israeli</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="Tips_page.html">Tips</a></li>
+                <li><a href="#">Search...</a></li>
+            </ul>
+        </div>
+        -->
