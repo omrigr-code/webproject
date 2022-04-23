@@ -12,36 +12,39 @@
 <script src="https://kit.fontawesome.com/82bc52e7cb.js" crossorigin="anonymous"></script>
 
 <body>
-    <nav class="navbar">
-        <div class="logo">Master's</div>
-        <div class="iconbar">
-            <a href="www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="www.instergram.com"><i class="fa-brands fa-instagram-square"></i></a>
-            <a href="mailto:tomer233@hotmail.com"><i class="fa-solid fa-envelope"></i></a>
-            <a href="www.youtube.com"><i class="fa-brands fa-youtube"></i></i></a>
-        </div>
-        
-                <ul class="nav-links">
-                    <input type="checkbox" id="checkbox_toggle"/>
-                    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-                        <div class="menu">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#Idea">Idea</a></li>
-                            <li><a href="#About">About Us</a></li>
-                            <li class="services">
-                                <a>Recipes</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">Mexican</a></li>
-                                    <li><a href="#">Italian</a></li>
-                                    <li><a href="#">Israeli</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="Tips_page.html">Tips</a></li>
-                            <li><a href="#">Search...</a></li>
-                        </div>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar">
+                <div class="col-xl-2 col-md-2 logo">Master's</div>
+                <div class="col-xl-4 iconbar">
+                    <a href="www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="www.instergram.com"><i class="fa-brands fa-instagram-square"></i></a>
+                    <a href="mailto:tomer233@hotmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="www.youtube.com"><i class="fa-brands fa-youtube"></i></i></a>
+                </div>                
+                <ul class="col-xl-6 col-md-8 nav-links">
+                            <input type="checkbox" id="checkbox_toggle"/>
+                            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                                <div class="menu">
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#Idea">Idea</a></li>
+                                    <li><a href="#About">About Us</a></li>
+                                    <li class="services">
+                                        <a>Recipes</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">Mexican</a></li>
+                                            <li><a href="#">Italian</a></li>
+                                            <li><a href="#">Israeli</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="Tips_page.html">Tips</a></li>
+                                    <li><a href="#">Search...</a></li>
+                                </div>
                 </ul>
-    </nav>
-    
+            </nav>
+        </div>
+    </div>
+
     <section id="home">
         <div class="container-fluid">
             <div class="row rowwidth">
