@@ -8,6 +8,10 @@ html {
     scroll-behavior: smooth;
 }
 
+.div{
+    height: 50px;
+}
+
 /* NAVBAR STYLING STARTS */
 .navbar {
     width: 100%;
@@ -268,7 +272,6 @@ input[type=checkbox] {
 
 /*arrow*/
 #home .arrow {
-    left: 50%;
     margin-top: 20%;
     margin-bottom: 20%;
     position: relative;
