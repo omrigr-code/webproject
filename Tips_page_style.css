@@ -146,13 +146,19 @@ input[type=checkbox]{
 
    }
 
+.rowwidth {
+    max-width: 100vw;
+}
 
-
+.img-me {
+    max-width: 100%;
+    max-height: max-content;
+}
 
    #Tips{
     width: 100%;
     float: left;
-    height: 100vh;
+    height: fit-content;
     position: relative;
    background-color: white;
 }
