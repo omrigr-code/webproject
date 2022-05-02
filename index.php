@@ -2,6 +2,7 @@
 <?php
 require_once('database.php');
 require_once('products.php');
+require_once('Tips.php');
 //Conncet to DB
 $database = new Database();
 if ($database->get_connection()) {
@@ -10,7 +11,7 @@ if ($database->get_connection()) {
     die("Connection fails");
 }
 if ($_POST['action'] == 'addContent') {
-    /*if($_POST['Subject']<=0){
+    if($_POST['Subject']<=0){
         echo "Subject cant be less than zero.";
         die();
     }
@@ -25,7 +26,7 @@ if ($_POST['action'] == 'addContent') {
     if(strlen($_POST['FullName'])!=6){
         echo "FullName cant be less than six.";
         die();
-    }*/
+    }
     $FullName = $_POST['FullName'];
     $Email = $_POST['Email'];
     $Subject = $_POST['Subject'];
@@ -38,5 +39,20 @@ if ($_POST['action'] == 'addContent') {
         echo $error;
     else
         echo 'Content was added';
+}
+if ($_POST['action'] == 'sendtip') {
+    $Rate = $_POST['Rate'];
+    $Content = $_POST['Content'];
+    //$Date = $_POST['Date'];
+    try {
+        $error = Tips::add_tip($Rate, $Content);
+    } 
+    catch (\Throwable $th) {
+        $error = 'Tip already exsists.';
+    }
+    if ($error)
+        echo $error;
+    else
+        echo 'Tip was added';
 }
 ?>
