@@ -63,7 +63,7 @@ class Tips
         return $products;
     }*/
     //Add a new Tips
-    public static function add_tip($Rate,$Content){ //$Date){
+    public static function add_tip($Rate,$Content){
         global $database;
         $error=null;
         $sql="Insert into tips(Rate,Content) values ('".$Rate."','".$Content."')";
