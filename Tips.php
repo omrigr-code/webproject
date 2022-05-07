@@ -4,6 +4,8 @@ require_once('database.php');
 
 class Tips
 {
+    public $User;
+    public $TipName;
     public $Rate;
     public $Content;
     public $Date;
@@ -63,10 +65,10 @@ class Tips
         return $products;
     }*/
     //Add a new Tips
-    public static function add_tip($Rate,$Content){
+    public static function add_tip($User,$TipName,$Rate,$Content,$Date){
         global $database;
         $error=null;
-        $sql="Insert into tips(Rate,Content) values ('".$Rate."','".$Content."')";
+        $sql="Insert into tips(User,TipName,Rate,Content,Date) values ('".$User."','".$TipName."','".$Rate."','".$Content."','".$Date."')";
         $result=$database->query($sql);
          if (!$result)
             $error='Can not add tips.  Error is:'.$database->get_connection()->error;

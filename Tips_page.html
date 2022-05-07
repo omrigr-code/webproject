@@ -15,8 +15,8 @@
     <script>
         function sendform() {
             const form = new FormData(document.getElementById('TipsForm'));
-            form.append("name", JSON.parse(window.sessionStorage.getItem("tip")).name);
-            form.append("value", JSON.parse(window.sessionStorage.getItem("tip")).value);
+            form.append("TipName", JSON.parse(window.sessionStorage.getItem("tip")).TipName);
+            form.append("Rate", JSON.parse(window.sessionStorage.getItem("tip")).Rate);
             const req = new Request('/index.php');
             fetch(req, {
                 method: 'POST',
@@ -28,11 +28,11 @@
             })
         }
 
-        function saveTip(name, value) {
+        function saveTip(TipName, Rate) {
             window.sessionStorage.clear();
             window.sessionStorage.setItem("tip", JSON.stringify({
-                "name": name,
-                "value": value
+                "TipName": TipName,
+                "Rate": Rate
             }));
         }
     </script>
@@ -112,6 +112,49 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
+                                        <input type="text" name="Content" placeholder="enter your tip">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
+                                            onclick='sendform()'>Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4 col-md-12 column">
+                    <img class="img-me" src="../images/first mealjpg.jpg" alt="firstmeal">
+                    <h1>SALT</h1>
+                    <p>If your food is tasteless,<br> salt will always save the day</p><br>
+                    <div class="Ranking_artical">
+                        <p> Rank this Tip</p>
+                        <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip2", 5)' name="5" /> </label>
+                        <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip2", 4)' name="4" /> </label>
+                        <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip2", 3)' name="3" /> </label>
+                        <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip2", 2)' name="2" /> </label>
+                        <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip2", 1)' name="1" /> </label>
+                    </div>
+                    <!-- Modal -->
+                    <form method="post" action="" id="TipsForm">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
                                         <input type="text" name="subject" placeholder="enter your tip">
                                     </div>
                                     <div class="modal-footer">
@@ -129,21 +172,21 @@
                     <img class="img-me" src="../images/first mealjpg.jpg" alt="firstmeal">
                     <h1>SALT</h1>
                     <p>If your food is tasteless,<br> salt will always save the day</p><br>
-                    <form method="post">
-                        <div class="Ranking_artical">
-                            <p> Rank this Tip</p>
-                            <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                        </div>
-                        <!-- Modal -->
+                    <div class="Ranking_artical">
+                        <p> Rank this Tip</p>
+                        <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip3", 5)' name="5" /> </label>
+                        <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip3", 4)' name="4" /> </label>
+                        <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip3", 3)' name="3" /> </label>
+                        <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip3", 2)' name="2" /> </label>
+                        <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip3", 1)' name="1" /> </label>
+                    </div>
+                    <!-- Modal -->
+                    <form method="post" action="" id="TipsForm">
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog">
@@ -160,49 +203,8 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-lg-4 col-md-12 column">
-                    <img class="img-me" src="../images/first mealjpg.jpg" alt="firstmeal">
-                    <h1>SALT</h1>
-                    <p>If your food is tasteless,<br> salt will always save the day</p><br>
-                    <form method="post">
-                        <div class="Ranking_artical">
-                            <p> Rank this Tip</p>
-                            <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <input type="text" name="subject" placeholder="enter your tip">
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                        <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
+                                            onclick='sendform()'>Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -215,21 +217,21 @@
                     <img class="img-me" src="../images/first mealjpg.jpg" alt="firstmeal">
                     <h1>SALT</h1>
                     <p>If your food is tasteless,<br> salt will always save the day</p><br>
-                    <form method="post">
-                        <div class="Ranking_artical">
-                            <p> Rank this Tip</p>
-                            <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                        </div>
-                        <!-- Modal -->
+                    <div class="Ranking_artical">
+                        <p> Rank this Tip</p>
+                        <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip4", 5)' name="5" /> </label>
+                        <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip4", 4)' name="4" /> </label>
+                        <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip4", 3)' name="3" /> </label>
+                        <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip4", 2)' name="2" /> </label>
+                        <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip4", 1)' name="1" /> </label>
+                    </div>
+                    <!-- Modal -->
+                    <form method="post" action="" id="TipsForm">
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog">
@@ -246,7 +248,8 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                        <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
+                                            onclick='sendform()'>Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -257,21 +260,21 @@
                     <img class="img-me" src="../images/first mealjpg.jpg" alt="firstmeal">
                     <h1>SALT</h1>
                     <p>If your food is tasteless,<br> salt will always save the day</p><br>
-                    <form method="post">
-                        <div class="Ranking_artical">
-                            <p> Rank this Tip</p>
-                            <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                        </div>
-                        <!-- Modal -->
+                    <div class="Ranking_artical">
+                        <p> Rank this Tip</p>
+                        <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip5", 5)' name="5" /> </label>
+                        <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip5", 4)' name="4" /> </label>
+                        <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip5", 3)' name="3" /> </label>
+                        <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip5", 2)' name="2" /> </label>
+                        <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip5", 1)' name="1" /> </label>
+                    </div>
+                    <!-- Modal -->
+                    <form method="post" action="" id="TipsForm">
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog">
@@ -288,7 +291,8 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                        <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
+                                            onclick='sendform()'>Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -299,21 +303,21 @@
                     <img class="img-me" src="../images/first mealjpg.jpg" alt="firstmeal">
                     <h1>SALT</h1>
                     <p>If your food is tasteless,<br> salt will always save the day</p><br>
-                    <form method="post">
-                        <div class="Ranking_artical">
-                            <p> Rank this Tip</p>
-                            <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                        </div>
-                        <!-- Modal -->
+                    <div class="Ranking_artical">
+                        <p> Rank this Tip</p>
+                        <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip6", 5)' name="5" /> </label>
+                        <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip6", 4)' name="4" /> </label>
+                        <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip6", 3)' name="3" /> </label>
+                        <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip6", 2)' name="2" /> </label>
+                        <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip6", 1)' name="1" /> </label>
+                    </div>
+                    <!-- Modal -->
+                    <form method="post" action="" id="TipsForm">
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog">
@@ -330,7 +334,8 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                        <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
+                                            onclick='sendform()'>Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -343,21 +348,21 @@
                     <img class="img-me" src="../images/first mealjpg.jpg" alt="firstmeal">
                     <h1>SALT</h1>
                     <p>If your food is tasteless,<br> salt will always save the day</p><br>
-                    <form method="post">
-                        <div class="Ranking_artical">
-                            <p> Rank this Tip</p>
-                            <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                        </div>
-                        <!-- Modal -->
+                    <div class="Ranking_artical">
+                        <p> Rank this Tip</p>
+                        <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip7", 5)' name="5" /> </label>
+                        <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip7", 4)' name="4" /> </label>
+                        <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip7", 3)' name="3" /> </label>
+                        <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip7", 2)' name="2" /> </label>
+                        <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip7", 1)' name="1" /> </label>
+                    </div>
+                    <!-- Modal -->
+                    <form method="post" action="" id="TipsForm">
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog">
@@ -374,7 +379,8 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                        <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
+                                            onclick='sendform()'>Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -385,21 +391,21 @@
                     <img class="img-me" src="../images/first mealjpg.jpg" alt="firstmeal">
                     <h1>SALT</h1>
                     <p>If your food is tasteless,<br> salt will always save the day</p><br>
-                    <form method="post">
-                        <div class="Ranking_artical">
-                            <p> Rank this Tip</p>
-                            <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                        </div>
-                        <!-- Modal -->
+                    <div class="Ranking_artical">
+                        <p> Rank this Tip</p>
+                        <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip8", 5)' name="5" /> </label>
+                        <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip8", 4)' name="4" /> </label>
+                        <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip8", 3)' name="3" /> </label>
+                        <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip8", 2)' name="2" /> </label>
+                        <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip8", 1)' name="1" /> </label>
+                    </div>
+                    <!-- Modal -->
+                    <form method="post" action="" id="TipsForm">
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog">
@@ -416,7 +422,8 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                        <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
+                                            onclick='sendform()'>Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -427,21 +434,21 @@
                     <img class="img-me" src="../images/first mealjpg.jpg" alt="firstmeal">
                     <h1>SALT</h1>
                     <p>If your food is tasteless,<br> salt will always save the day</p><br>
-                    <form method="post">
-                        <div class="Ranking_artical">
-                            <p> Rank this Tip</p>
-                            <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                            <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" name="Rate" /> </label>
-                        </div>
-                        <!-- Modal -->
+                    <div class="Ranking_artical">
+                        <p> Rank this Tip</p>
+                        <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip9", 5)' name="5" /> </label>
+                        <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip9", 4)' name="4" /> </label>
+                        <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip9", 3)' name="3" /> </label>
+                        <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip9", 2)' name="2" /> </label>
+                        <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" onclick='saveTip("tip9", 1)' name="1" /> </label>
+                    </div>
+                    <!-- Modal -->
+                    <form method="post" action="" id="TipsForm">
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog">
@@ -458,7 +465,8 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                        <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
+                                            onclick='sendform()'>Save changes</button>
                                     </div>
                                 </div>
                             </div>

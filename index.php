@@ -40,12 +40,15 @@ if ($_POST['action'] == 'addContent') {
     else
         echo 'Content was added';
 }
-if ($_POST['action'] == 'sendtip') {
+else {
     $Rate = $_POST['Rate'];
+    $TipName = $_POST['TipName'];
     $Content = $_POST['Content'];
-    //$Date = $_POST['Date'];
+    $User=123456;
+    $Format = "Y-m-d H:i:s";  
+    $Date=date( $Format);
     try {
-        $error = Tips::add_tip($Rate, $Content);
+        $error = Tips::add_tip($User,$TipName,$Rate,$Content,$Date);
     } 
     catch (\Throwable $th) {
         $error = 'Tip already exsists.';
