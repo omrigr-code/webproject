@@ -9,7 +9,8 @@ html {
 }
 
 .div{
-    height: 50px;
+    height: 200px;
+    background-color: #ffeded;
 }
 
 /* NAVBAR STYLING STARTS */
@@ -389,7 +390,7 @@ input[type=checkbox] {
     float: left;
     height: auto;
     position: relative;
-    background-color: white;
+    background-color: whitesmoke;
 }
 
 #About .col- {
