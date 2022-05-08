@@ -10,7 +10,7 @@ html {
 
 .div{
     height: 200px;
-    background-color: #ffeded;
+    background-color: white;
 }
 
 /* NAVBAR STYLING STARTS */
@@ -276,6 +276,7 @@ input[type=checkbox] {
     margin-top: 20%;
     margin-bottom: 20%;
     position: relative;
+    text-align: -webkit-center;
 }
 
 #home .arrow span {
