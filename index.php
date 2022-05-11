@@ -1,28 +1,30 @@
 
 <?php
-require_once('PHP\database.php');
-require_once('PHP\products.php');
-require_once('PHP\Tips.php');
+require_once('database.php');
+require_once('products.php');
+require_once('Tips.php');
 //Conncet to DB
 $database = new Database();
 if ($database->get_connection()) {
-    echo "Connection is OK <br>";
+    
 } else {
     die("Connection fails");
 }
+
 if ($_POST['action'] == 'addContent') {
-    if($_POST['Subject']<=0){
-        echo "Subject cant be less than zero.";
+    if(empty($_POST['FullName'])){
+        echo "FullName cant be empty";
         die();
     }
-    if(strlen($_POST['Email'])!=6){
-        echo "Email cant be less than six.";
+    if(!filter_var($_POST['Email'], FILTER_VALIDATE_EMAIL)){
+        echo "Please fill in valid email";
         die();
     }
-    if(strlen($_POST['FullName'])!=6){
-        echo "FullName cant be less than six.";
+    if((empty($_POST['Subject'])) || (is_numeric($_POST['Subject'])) ){
+        echo 'Please fill in Subject, Subject cant be with Numbers';
         die();
     }
+
     $FullName = $_POST['FullName'];
     $Email = $_POST['Email'];
     $Subject = $_POST['Subject'];
@@ -33,25 +35,24 @@ if ($_POST['action'] == 'addContent') {
     }
     if ($error)
         echo $error;
-    else
-        echo 'Content was added';
 }
 else {
+    if((empty($_POST['Content'])) || (is_numeric($_POST['Content'])) ){
+        echo 'Please fill in Content, Content cant be with Numbers';
+        die();
+    }
     $Rate = $_POST['Rate'];
     $TipName = $_POST['TipName'];
     $Content = $_POST['Content'];
-    $User=123456;
     $Format = "Y-m-d H:i:s";  
     $Date=date( $Format);
     try {
-        $error = Tips::add_tip($User,$TipName,$Rate,$Content,$Date);
+        $error = Tips::add_tip($TipName,$Rate,$Content,$Date);
     } 
     catch (\Throwable $th) {
         $error = 'Tip already exsists.';
     }
     if ($error)
         echo $error;
-    else
-        echo 'Tip was added';
 }
 ?>

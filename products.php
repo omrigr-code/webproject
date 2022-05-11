@@ -1,14 +1,12 @@
 <?php
 
-require_once('PHP\database.php');
+require_once('database.php');
 
-class Tips
+class Content
 {
-    public $User;
-    public $TipName;
-    public $Rate;
-    public $Content;
-    public $Date;
+    public $FullName;
+    public $Email;
+    public $Subject;
 
     //Tostring
 
@@ -35,7 +33,7 @@ class Tips
         $object_properties = get_object_vars($this);
         return array_key_exists($attribute, $object_properties);
     }
-    private function instantation($tips_array)
+    private function instantation($product_array)
     {
         foreach ($product_array as $attribute => $value) {
             if ($result = $this->has_attribute($attribute)) {
@@ -44,8 +42,8 @@ class Tips
         }
     }
 
-    //Fetch All Tips
-    public static function fetch_tipss()
+    //Fetch All Users
+    public static function fetch_products()
     {
         global $database;
         $sql = "select * from products";
@@ -64,16 +62,16 @@ class Tips
         }
         return $products;
     }*/
-    //Add a new Tips
-    public static function add_tip($User,$TipName,$Rate,$Content,$Date){
+    //Add a new Product
+    public static function add_content($FullName,$Email,$Subject){
         global $database;
         $error=null;
-        $sql="Insert into tips(User,TipName,Rate,Content,Date) values ('".$User."','".$TipName."','".$Rate."','".$Content."','".$Date."')";
+        $sql="Insert into content(FullName,Email,Subject) values ('".$FullName."','".$Email."', '".$Subject. "')";
         $result=$database->query($sql);
          if (!$result)
-            $error='Can not add tips.  Error is:'.$database->get_connection()->error;
+            $error='Can not add product.  Error is:'.$database->get_connection()->error;
         else{
-            echo "Add Tip Success!";
+            echo "Add Content Success! Thank you";
         }
         return $error;          
  }
