@@ -15,10 +15,6 @@ if ($_POST['action'] == 'addContent') {
         echo "Subject cant be less than zero.";
         die();
     }
-    if($_POST['Amount']<=0){
-        echo "Amount cant be less than zero.";
-        die();
-    }
     if(strlen($_POST['Email'])!=6){
         echo "Email cant be less than six.";
         die();
