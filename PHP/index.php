@@ -1,8 +1,8 @@
 
 <?php
-require_once('database.php');
-require_once('products.php');
-require_once('Tips.php');
+require_once('PHP\database.php');
+require_once('PHP\products.php');
+require_once('PHP\Tips.php');
 //Conncet to DB
 $database = new Database();
 if ($database->get_connection()) {
