@@ -1,8 +1,15 @@
+.centerAudio{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
 .right{
     float: right;
     margin-left: auto;
 
 }
+
+
 
 #home .rowwidth {
     max-width: 100vw;
@@ -12,6 +19,7 @@
     max-width: 100%;
     max-height: max-content;
 }
+
 
 #home .center {
     text-align: center;
