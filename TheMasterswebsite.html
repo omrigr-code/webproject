@@ -28,9 +28,9 @@
 
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid bottom">
         <div class="row">
-            <nav class="navbar">
+            <nav class="navbar fixed-top">
                 <div class="col-xl-2 col-md-2 logo">Master's</div>
                 <div class="col-xl-4 iconbar">
                     <a href="www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
@@ -161,11 +161,11 @@
                 </div>
                 <div class="col-xl-6 col-md-12">
                     <form class="newsForm" id="contentForm">      
-                        <h1 style="color: #CC4949; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Join Our Newsletter <i class="fa-solid fa-paper-plane"></i></h1> <br>
+                        <h1 style="color: #CC4949; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Contact Us! <i class="fa-solid fa-paper-plane"></i></h1> <br>
                         <input name="FullName" type="text" class="feedback-input" placeholder="Full Name" />   
                         <input name="Email" type="text" class="feedback-input" placeholder="Email" />
                         <textarea name="Subject" class="feedback-input" placeholder="Subject"></textarea>
-                        <button type="button" onclick='sendform()'> Send </button>
+                        <button type="button" class="btn btn-secondary" onclick='sendform()'> Send </button>
                         <input type="hidden" name="action" value="addContent">
                     </form>
                 </div>

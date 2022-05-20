@@ -386,4 +386,15 @@ label{
    }
    [type="submit"]:hover { background:#CC4949; }
    
-  
+  .modal-title{
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+.modal-body #Content {
+  width: 100%;
+}
+
+.special{
+  margin-top: 28px !important;
+}

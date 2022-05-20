@@ -41,9 +41,9 @@
 <script src="https://kit.fontawesome.com/82bc52e7cb.js" crossorigin="anonymous"></script>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid bottom">
         <div class="row">
-            <nav class="navbar">
+            <nav class="navbar fixed-top">
                 <div class="col-xl-2 col-md-2 logo">Master's</div>
                 <div class="col-xl-4 iconbar">
                     <a href="www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
@@ -86,7 +86,7 @@
                     <img class="img-me" src="images\Tips\workspace.jpg" alt="firstmeal" height="350">
                     <h1>Workspace</h1>
                     <p>Set up your workspace by gathering clean tools, bowls and utensils. And make sure to keep a trashcan within arm’s reach.</p><br>
-                    <div class="Ranking_artical">
+                    <div class="Ranking_artical special">
                         <p> Rank this Tip</p>
                         <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal" onclick='saveTip("tip1", 5)' name="5" /> </label>
@@ -106,19 +106,19 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Thank you for your ranking, you can add a comment</h5>
 
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" name="Content" placeholder="enter your tip">
+                                        <input type="text" id="Content" name="Content" placeholder="Please enter your comment">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
-                                            onclick='sendform()'>Save changes</button>
+                                            onclick='sendform()'>Save Comment</button>
                                     </div>
                                 </div>
                             </div>
@@ -149,19 +149,19 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Thank you for your ranking, you can add a comment</h5>
 
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" name="subject" placeholder="enter your tip">
+                                        <input type="text" id="Content" name="Content" placeholder="Please enter your comment">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
-                                            onclick='sendform()'>Save changes</button>
+                                            onclick='sendform()'>Save Comment</button>
                                     </div>
                                 </div>
                             </div>
@@ -192,19 +192,19 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Thank you for your ranking, you can add a comment</h5>
 
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" name="subject" placeholder="enter your tip">
+                                        <input type="text" id="Content" name="Content" placeholder="Please enter your comment">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
-                                            onclick='sendform()'>Save changes</button>
+                                            onclick='sendform()'>Save Comment</button>
                                     </div>
                                 </div>
                             </div>
@@ -217,7 +217,7 @@
                     <img class="img-me" src="images\Tips\Plan and Clean.jpg" alt="firstmeal" height="350">
                     <h1>Plan and Clean</h1>
                     <p>Always read and re-read your recipes before you start cooking. Clean as you go.</p><br>
-                    <div class="Ranking_artical">
+                    <div class="Ranking_artical special">
                         <p> Rank this Tip</p>
                         <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal" onclick='saveTip("tip4", 5)' name="5" /> </label>
@@ -237,19 +237,19 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Thank you for your ranking, you can add a comment</h5>
 
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" name="subject" placeholder="enter your tip">
+                                        <input type="text" id="Content" name="Content" placeholder="Please enter your comment">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
-                                            onclick='sendform()'>Save changes</button>
+                                            onclick='sendform()'>Save Comment</button>
                                     </div>
                                 </div>
                             </div>
@@ -260,7 +260,7 @@
                     <img class="img-me" src="images\Tips\Butter.jpg" alt="firstmeal" height="350">
                     <h1>Butter</h1>
                     <p>To prevent butter from over-browning in your pan, add a little bit of lemon juice.</p><br>
-                    <div class="Ranking_artical">
+                    <div class="Ranking_artical special">
                         <p> Rank this Tip</p>
                         <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal" onclick='saveTip("tip5", 5)' name="5" /> </label>
@@ -280,19 +280,19 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Thank you for your ranking, you can add a comment</h5>
 
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" name="subject" placeholder="enter your tip">
+                                        <input type="text" id="Content" name="Content" placeholder="Please enter your comment">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
-                                            onclick='sendform()'>Save changes</button>
+                                            onclick='sendform()'>Save Comment</button>
                                     </div>
                                 </div>
                             </div>
@@ -323,19 +323,19 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Thank you for your ranking, you can add a comment</h5>
 
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" name="subject" placeholder="enter your tip">
+                                        <input type="text" id="Content" name="Content" placeholder="Please enter your comment">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
-                                            onclick='sendform()'>Save changes</button>
+                                            onclick='sendform()'>Save Comment</button>
                                     </div>
                                 </div>
                             </div>
@@ -368,19 +368,19 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Thank you for your ranking, you can add a comment</h5>
 
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" name="subject" placeholder="enter your tip">
+                                        <input type="text" id="Content" name="Content" placeholder="Please enter your comment">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
-                                            onclick='sendform()'>Save changes</button>
+                                            onclick='sendform()'>Save Comment</button>
                                     </div>
                                 </div>
                             </div>
@@ -391,7 +391,7 @@
                     <img class="img-me" src="images\Tips\Onion.jpg" alt="firstmeal" height="350">
                     <h1>Onion</h1>
                     <p>To prevent tears, cut off the root of the onion before you slice.</p><br>
-                    <div class="Ranking_artical">
+                    <div class="Ranking_artical special">
                         <p> Rank this Tip</p>
                         <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal" onclick='saveTip("tip8", 5)' name="5" /> </label>
@@ -411,19 +411,19 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Thank you for your ranking, you can add a comment</h5>
 
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" name="subject" placeholder="enter your tip">
+                                        <input type="text" id="Content" name="Content" placeholder="Please enter your comment">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
-                                            onclick='sendform()'>Save changes</button>
+                                            onclick='sendform()'>Save Comment</button>
                                     </div>
                                 </div>
                             </div>
@@ -434,7 +434,7 @@
                     <img class="img-me" src="images\Tips\Honey1.jpg" alt="firstmeal" height="350">
                     <h1>Honey</h1>
                     <p>Honey is a natural preservative and will never spoil.</p><br>
-                    <div class="Ranking_artical">
+                    <div class="Ranking_artical special">
                         <p> Rank this Tip</p>
                         <label> <i class="fa-solid fa-star">5</i> <input type="radio" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal" onclick='saveTip("tip9", 5)' name="5" /> </label>
@@ -454,19 +454,19 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Thank you for your ranking, you can add a comment</h5>
 
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" name="subject" placeholder="enter your tip">
+                                        <input type="text" id="Content" name="Content" placeholder="Please enter your comment">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary" name="submit" value="sendtip"
-                                            onclick='sendform()'>Save changes</button>
+                                            onclick='sendform()'>Save Comment</button>
                                     </div>
                                 </div>
                             </div>
