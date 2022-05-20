@@ -37,10 +37,6 @@ if ($_POST['action'] == 'addContent') {
         echo $error;
 }
 else {
-    if((empty($_POST['Content'])) || (is_numeric($_POST['Content'])) ){
-        echo 'Please fill in Content, Content cant be with Numbers';
-        die();
-    }
     $Rate = $_POST['Rate'];
     $TipName = $_POST['TipName'];
     $Content = $_POST['Content'];
