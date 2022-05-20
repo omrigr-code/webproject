@@ -133,7 +133,7 @@ else {
                         </div>
                     </div>
                     <h5 class="center">See The Master's in action</h5>
-                    <video width="500" height="400" autoplay loop class="centerAudio">
+                    <video width="500" height="340" autoplay loop class="centerAudio">
                         <source src="images\videoplayback.mp4" type="video/mp4">
                       </video>
                 </div>

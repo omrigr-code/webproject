@@ -2,6 +2,7 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
+    width: -webkit-fill-available;
 }
 .right{
     float: right;
@@ -182,6 +183,7 @@
     height: auto;
     position: relative;
     background-color: whitesmoke;
+    padding-bottom: 100;
 }
 
 #About .col- {
