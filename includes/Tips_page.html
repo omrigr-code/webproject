@@ -18,7 +18,7 @@
             const form = new FormData(document.getElementById('TipsForm'));
             form.append("TipName", JSON.parse(window.sessionStorage.getItem("tip")).TipName);
             form.append("Rate", JSON.parse(window.sessionStorage.getItem("tip")).Rate);
-            const req = new Request('/PHP/index.php');
+            const req = new Request('/includes/index.php');
             fetch(req, {
                 method: 'POST',
                 body: form
@@ -62,12 +62,12 @@
                         <li class="services">
                             <a>Recipes</a>
                             <ul class="dropdown1">
-                                <li><a href="/HTML/Mexican_page.html">Mexican</a></li>
-                                <li><a href="/HTML/Italian_page.html">Italian</a></li>
-                                <li><a href="/HTML/Israeli_page.html">Israeli</a></li>
+                                <li><a href="/includes/Mexican_page.html">Mexican</a></li>
+                                <li><a href="/includes/Italian_page.html">Italian</a></li>
+                                <li><a href="/includes/Israeli_page.html">Israeli</a></li>
                             </ul>
                         </li>
-                        <li><a href="/HTML/Tips_page.html">Tips</a></li>
+                        <li><a href="/includes/Tips_page.html">Tips</a></li>
                     </div>
                 </ul>
             </nav>
