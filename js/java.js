@@ -12,23 +12,24 @@ function sendform() {
     })
 }
 
-var x = $("#first");
-var y = $("#first1");
-var z = $("#first2");
-x.css("color", "black");
-y.css("color", "black");
-z.css("color", "black");
- 
-function changeColor() {
-    if (x.css("color") == "rgb(0, 0, 0)") {
-        x.css("color", "red");
-        y.css("color", "red");
-        z.css("color", "red");
-    } else if (x.css("color") == "rgb(255, 0, 0)") {
-        x.css("color", "black");
-        y.css("color", "black");
-        z.css("color", "black");
-    }
-};
-window.setInterval(changeColor, 1000);
-
+window.onload = () => {
+	var x = $("#first");
+	var y = $("#first1");
+	var z = $("#first2");
+	x.css("color", "black");
+	y.css("color", "black");
+	z.css("color", "black");
+	 
+	function changeColor() {
+		if (x.css("color") == "rgb(0, 0, 0)") {
+			x.css("color", "red");
+			y.css("color", "red");
+			z.css("color", "red");
+		} else if (x.css("color") == "rgb(255, 0, 0)") {
+			x.css("color", "black");
+			y.css("color", "black");
+			z.css("color", "black");
+		}
+	};
+	window.setInterval(changeColor, 1000);
+}
