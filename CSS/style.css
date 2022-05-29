@@ -40,14 +40,6 @@
     padding: 10px;
 }
 
-/* #home .center h1 {
-    color: black;
-}
-
-#home .center h5 {
-    color: black;
-} */
-
 #home .btn {
     background-color: #CC6666;
     border: none;
@@ -121,8 +113,6 @@
 }
 
 #Idea .Howheader {
-    /*padding-top: 115px;
-    padding-left: 65px;*/
     margin-top: 32px;
     margin-bottom: 32px;
     font-size: 40px;
@@ -210,18 +200,9 @@
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-/*.newsForm{
-   margin-top: 10%;
-   margin-right: 5%;
-   margin-bottom: 10px;
-   margin-left: 7%;
-}*/
 body {
     background: rgb(30, 30, 40);
 }
-
-/*form { max-width:420px; margin:200px auto;margin-left: 50px; }
-*/
 
 .feedback-input {
     color: black;
@@ -248,24 +229,4 @@ textarea {
     height: 150px;
     line-height: 150%;
     resize: vertical;
-}
-
-[type="submit"] {
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    width: 100%;
-    background: #CC6666;
-    border-radius: 5px;
-    border: 0;
-    cursor: pointer;
-    color: white;
-    font-size: 24px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    transition: all 0.3s;
-    margin-top: -4px;
-    font-weight: 700;
-}
-
-[type="submit"]:hover {
-    background: #CC4949;
 }

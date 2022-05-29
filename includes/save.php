@@ -1,7 +1,7 @@
 <?php
 
 require_once('Tips.php');
-require_once('products.php');
+require_once('content.php');
 
 if ($_POST['action'] == 'addContent') {
     if(empty($_POST['FullName'])){

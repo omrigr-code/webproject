@@ -1,6 +1,6 @@
 <?php
 require_once('database.php');
-require_once('products.php');
+require_once('content.php');
 require_once('Tips.php');
 
 //Conncet to DB
