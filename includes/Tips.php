@@ -9,10 +9,6 @@ class Tips
     public $Content;
     public $Date;
 
-    //Tostring
-
-    //Get Property
-
     // //Setter
     public function set($property, $value)
     {
@@ -27,42 +23,7 @@ class Tips
             return $this->$property;
         }
     }
-    /*
-    //Array to properties
-    private function has_attribute($attribute)
-    {
-        $object_properties = get_object_vars($this);
-        return array_key_exists($attribute, $object_properties);
-    }
-    private function instantation($tips_array)
-    {
-        foreach ($product_array as $attribute => $value) {
-            if ($result = $this->has_attribute($attribute)) {
-                $this->$attribute = $value;
-            }
-        }
-    }
-
-    //Fetch All Tips
-    public static function fetch_tipss()
-    {
-        global $database;
-        $sql = "select * from products";
-        $result = $database->query($sql);
-        $products =[];
-        if ($result) {
-            $i = 0;
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    $product = new Content();
-                    $product->instantation($row);
-                    $products[$i] = $product;
-                    $i += 1;
-                }
-            }
-        }
-        return $products;
-    }*/
+ 
     //Add a new Tips
     public static function add_tip($TipName,$Rate,$Content,$Date){
         global $database;
@@ -70,7 +31,7 @@ class Tips
         $sql="Insert into tips(TipName,Rate,Content,Date) values ('".$TipName."','".$Rate."','".$Content."','".$Date."')";
         $result=$database->query($sql);
          if (!$result)
-            $error='Can not add tips.  Error is:';
+            $error='Can not add tips.';
         else{
             echo "Add Tip Success!";
         }
