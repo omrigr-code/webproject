@@ -1,6 +1,6 @@
 function sendform() {
     const form = new FormData(document.getElementById('contentForm'));
-    const req = new Request('/PHP/index.php');
+    const req = new Request('/includes/index.php');
     fetch(req, {
         method: 'POST',
         body: form
