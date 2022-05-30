@@ -1,0 +1,427 @@
+<?php
+
+session_start();
+
+if (empty($_SESSION["email"])) {
+    die("Protected Page");
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Master's page</title>
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/82bc52e7cb.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid bottom">
+        <div class="row">
+            <nav class="navbar fixed-top">
+                <div class="col-xl-2 col-md-2 logo">Master's</div>
+                <div class="col-xl-4 iconbar">
+                    <a href="www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="www.instergram.com"><i class="fa-brands fa-instagram-square"></i></a>
+                    <a href="mailto:tomer233@hotmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="www.youtube.com"><i class="fa-brands fa-youtube"></i></i></a>
+                </div>
+                <ul class="col-xl-6 col-md-8 nav-links">
+                    <input type="checkbox" id="checkbox_toggle" />
+                    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                    <div class="menu">
+                        <li><a href="/home.php">Home</a></li>
+                        <li><a href="/home.php#Idea">Idea</a></li>
+                        <li><a href="/home.php#About">About Us</a></li>
+                        <li class="services">
+                            <a>Recipes</a>
+                            <ul class="dropdown1">
+                                <li><a href="/mexican.php">Mexican</a></li>
+                                <li><a href="/italy.php">Italian</a></li>
+                                <li><a href="/israel.php">Israeli</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/tips.php">Tips</a></li>
+                        <li><a href="/user.php">User Page</a></li>
+                        <li><a href="/api/logout.php">Logout</a></li>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <h1>Mexican Recepies</h1>
+    <H1>Starter</H1>
+    <section id="head">
+        <div class="container-fluid">
+            <div class="row rowwidth">
+                <div class="col-lg-6 col-md-12">
+                    <h1>Salsa Verde</h1>
+                    <p> the most addictive dip I’ve tasted recently- is Salsa Verde. This delicious Mexican green
+                        (Verde) salsa is made with roasted tomatillos, chili peppers, lime juice, cilantro, garlic, and
+                        onion. You can dip it with chips, spread it on meat, or add it to your tacos! This salsa is
+                        crazy delicious. Huge YASSS here. </p>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <img class="img-me" src="images/recipes/Salsa Verde.jpeg" alt="main picture" height="700">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="info">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-xl-4 col-lg-12 col-md-12 box">
+                    <img class="img-me" src="images/Ingridients.jpeg" alt="main picture">
+                    <h6>Ingredients</h6>
+                    <p>8</p>
+                </div>
+                <div class="col-xl-4 col-lg-12 col-md-12 box">
+                    <img class="img-me" src="images/Time.jpeg" alt="main picture">
+                    <h6>Total time</h6>
+                    <p>20 min</p>
+                </div>
+                <div class="col-xl-4 col-lg-12 col-md-12 box">
+                    <img class="img-me" src="images/Difficulty.jpeg" alt="main picture">
+                    <h6>Difficulty</h6>
+                    <p>Easy</p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <div class="accordion" id="Description">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Ingredients
+                </button>
+            </h2>
+            <div id="collapseOne" class=" collapse " aria-labelledby="headingOne" data-bs-parent="#Description">
+                <div class="accordion-body">
+                    10 tomatillos <br>
+                    2 Jalapeño or Serrano peppers, stemmed, seeded, and chopped (I use them whole for more heat)<br>
+                    1 white onion<br>
+                    A bunch of cilantros<br>
+                    Half lime<br>
+                    2 cloves of garlic<br>
+                    Olive oil<br>
+                    1 tablespoon salt<br>
+
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    preparation method
+                </button>
+            </h2>
+            <div id="collapseTwo" class=" collapse" aria-labelledby="headingTwo" data-bs-parent="#Description">
+                <div class="accordion-body">
+                    - Remove the husks from the tomatillos and wash well. <br>
+                    - Cut the onion in half. One half we will roast and the other half we will chop and add raw to the
+                    salsa.<br>
+                    - Remove the stems from the peppers.<br>
+                    - Set your grill on medium heat (you can also broil in the oven). <br>
+                    - Place the tomatillos, peppers, and onion onto the grill and roast them until lightly
+                    blackened.<br>
+                    - Remove from the grill and transfer them all to a food processor.<br>
+                    - Add two cloves of garlic, half a bunch of cilantros, lime juice, olive oil, and salt.<br>
+                    - Blend until smooth and sexy.<br>
+                    - Chop the other half of the white onion and the other half bunch of the cilantro. <br>
+                    - Plate the salsa, add the chopped onion & cilantro, and mix well.<br>
+                    - Dip your tortilla chips and take a sip of a Mexican beer. <br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1>Main</h1>
+    <section id="head">
+        <div class="container-fluid">
+            <div class="row rowwidth">
+                <div class="col-lg-6 col-md-12">
+                    <img class="img-me" src="images/recipes/Chili con carne.jpeg" alt="main picture" height="700">
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <h1>Chili con carne</h1>
+                    <p>Here's a spicy classic you can still eat while on a diet. Serve with a salad and/or a very small
+                        portion of rice. Don't forget you've already got carbs in the beans.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="info">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-xl-4 col-lg-12 col-md-12 box">
+                    <img class="img-me" src="images/Ingridients.jpeg" alt="main picture">
+                    <h6>Ingredients</h6>
+                    <p>17</p>
+                </div>
+                <div class="col-xl-4 col-lg-12 col-md-12 box">
+                    <img class="img-me" src="images/Time.jpeg" alt="main picture">
+                    <h6>Total time</h6>
+                    <p>2 hours</p>
+                </div>
+                <div class="col-xl-4 col-lg-12 col-md-12 box">
+                    <img class="img-me" src="images/Difficulty.jpeg" alt="main picture">
+                    <h6>Difficulty</h6>
+                    <p>Difficult</p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <div class="accordion" id="Description">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading3">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                    Ingredients
+                </button>
+            </h2>
+            <div id="collapse3" class=" collapse " aria-labelledby="heading3" data-bs-parent="#Description">
+                <div class="accordion-body">
+                    500g lean minced beef (10% or less fat) <br>
+                    2 medium onions, chopped<br>
+                    3 garlic cloves, peeled and ﬁnely chopped<br>
+                    1-2 tsp hot chili powder<br>
+                    2 tsp ground cumin<br>
+                    2 tsp ground coriander<br>
+                    2 tbsp plain ﬂour<br>
+                    150ml red wine or extra stock<br>
+                    300ml beef stock, made with 1 beef stock cube<br>
+                    400g of chopped tomatoes<br>
+                    400g can of red kidney beans, drained and rinsed<br>
+                    3 tbsp tomato purée<br>
+                    1 tsp caster sugar<br>
+                    1 tsp dried oregano<br>
+                    1 bay leaf<br>
+                    ﬂaked sea salt<br>
+                    freshly ground black pepper<br>
+
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading4">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                    preparation method
+                </button>
+            </h2>
+            <div id="collapse4" class=" collapse " aria-labelledby="heading4" data-bs-parent="#Description">
+                <div class="accordion-body">
+                    -Place a large non-stick saucepan over a medium heat and add the beef and onions. Cook together for
+                    5 minutes, stirring the beef and squishing it against the sides of the pan to break up the lumps.
+                    Add the garlic, 1–2 teaspoons of chili powder, depending on how hot you like your chilli, and the
+                    cumin and coriander. Fry together for 1–2 minutes more. Sprinkle over the ﬂour and stir well. <br>
+                    -Slowly add the wine and then the stock, stirring constantly. Tip the tomatoes and kidney beans into
+                    the pan and stir in the tomato purée, caster sugar, oregano and bay leaf. Season with a pinch of
+                    salt and plenty of freshly ground black pepper.<br>
+                    -Bring to a simmer on the hob, then cover loosely with a lid. Reduce the heat and leave to simmer
+                    gently for 45 minutes, stirring occasionally until the mince is tender and the sauce is thick.
+                    Adjust the seasoning to taste and serve.<br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1>Dessert</h1>
+    <section id="head">
+        <div class="container-fluid">
+            <div class="row rowwidth">
+                <div class="col-lg-6 col-md-12">
+                    <h1>churros</h1>
+                    <p>A churro is a type of fried dough from Spanish and Portuguese cuisine. churros can either be thin
+                        (and sometimes knotted) or long and thick, and served with chocolate or maple</p>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <img class="img-me" src="images/recipes/Choroos.jpeg" alt="main picture" height="700">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="info">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-xl-4 col-lg-12 col-md-12 box">
+                    <img class="img-me" src="images/Ingridients.jpeg" alt="main picture">
+                    <h6>Ingredients</h6>
+                    <p>13</p>
+                </div>
+                <div class="col-xl-4 col-lg-12 col-md-12 box">
+                    <img class="img-me" src="images/Time.jpeg" alt="main picture">
+                    <h6>Total time</h6>
+                    <p>40 min</p>
+                </div>
+                <div class="col-xl-4 col-lg-12 col-md-12 box">
+                    <img class="img-me" src="images/Difficulty.jpeg" alt="main picture">
+                    <h6>Difficulty</h6>
+                    <p>Easy</p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <div class="accordion" id="Description">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading5">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                    Ingredients
+                </button>
+            </h2>
+            <div id="collapse5" class=" collapse" aria-labelledby="heading5" data-bs-parent="#Description">
+                <div class="accordion-body">
+                    50g butter, melted <br>
+                    ½ tsp vanilla extract<br>
+                    250g plain flour, from a new bag (essential for absorbing the liquid)<br>
+                    1 tsp baking powder<br>
+                    about 1-liter sunflower oil<br>
+                    a few chunks of bread<br>
+                    For the sauce<br>
+                    200g dark chocolate, not too bitter, broken into chunks<br>
+                    100ml double cream<br>
+                    100ml whole milk<br>
+                    3 tbsp golden syrup<br>
+                    1/2 tsp vanilla extract, if you have some<br>
+                    For the cinnamon sugar<br>
+                    100g caster sugar<br>
+                    2 tsp cinnamon<br>
+
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading6">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                    preparation method
+                </button>
+            </h2>
+            <div id="collapse6" class=" collapse " aria-labelledby="heading6" data-bs-parent="#Description">
+                <div class="accordion-body">
+                    - Boil the kettle, then measure 300ml boiling water into a jug and add the melted butter and vanilla
+                    extract. Sift the flour and baking powder into a big mixing bowl with a big pinch of salt. Make a
+                    well in the center, then pour in the contents of the jug and very quickly beat into the flour with a
+                    wooden spoon until lump-free. Rest for 10-15 mins while you make the sauce. <br>
+                    - Put all the sauce ingredients into a pan and gently melt together, stirring occasionally until you
+                    have a smooth shiny sauce. Keep warm on a low heat.<br>
+                    - Fill a large deep saucepan one-third full of oil. Cooking with hot oil can be dangerous - before
+                    you start, read up on how to deep-fry safely to avoid accidents in the kitchen. Heat until a cube of
+                    bread browns in 45 seconds to 1 min. Cover a tray with kitchen paper and mix the caster sugar and
+                    cinnamon together.<br>
+                    - Fit a star nozzle to a piping bag - 1.5-2cm wide is a good size. Fill with the rested dough, then
+                    pipe 2-3 strips directly into the pan, snipping off each dough strip with a pair of kitchen
+                    scissors. Fry until golden brown and crisp. Be very careful here - if air bubbles form in the
+                    churros they can explode, especially if the oil overheats or you use old flour. Cooking with hot oil
+                    can be dangerous - before you start, read up on how to deep-fry safely to avoid accidents in the
+                    kitchen. Keep children out of the kitchen and protect yourself by wearing long sleeves and eye
+                    protection and keeping your face away from the pan.<br>
+                    - Once the churros are crisp and golden brown, remove them from the oil with a slotted spoon and
+                    drain on the kitchen paper-lined tray. Carry on cooking the rest of the dough in batches, sprinkling
+                    the cooked churros with some cinnamon sugar as you go. When you've cooked all the churros, toss with
+                    any remaining cinnamon sugar and serve with the chocolate sauce, for dipping.<br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>Cocktail</h1>
+    <section id="head">
+        <div class="container-fluid">
+            <div class="row rowwidth">
+                <div class="col-lg-6 col-md-12">
+                    <img class="img-me" src="images/recipes/Paloma cocktail.jpeg" alt="main picture" height="700">
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <h1>Paloma cocktail</h1>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="info">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-xl-4 col-lg-12 col-md-4 col-sm-4 box">
+                    <img class="img-me" src="images/Ingridients.jpeg" alt="main picture">
+                    <h6>Ingredients</h6>
+                    <p>5</p>
+                </div>
+                <div class="col-xl-4 col-lg-12 col-md-4 col-sm-4 box">
+                    <img class="img-me" src="images/Time.jpeg" alt="main picture">
+                    <h6>Total time</h6>
+                    <p>10 min</p>
+                </div>
+                <div class="col-xl-4 col-lg-12 col-md-4 col-sm-4 box">
+                    <img class="img-me" src="images/Difficulty.jpeg" alt="main picture">
+                    <h6>Difficulty</h6>
+                    <p>Easy</p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <div class="accordion" id="Description">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading7">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                    Ingredients
+                </button>
+            </h2>
+            <div id="collapse7" class=" collapse " aria-labelledby="heading7" data-bs-parent="#Description">
+                <div class="accordion-body">
+                    Tequila <br>
+                    Grapefruit juice<br>
+                    Lime juice<br>
+                    Maple syrup or simple syrup <br>
+                    Soda water<br>
+
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading8">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                    preparation method
+                </button>
+            </h2>
+            <div id="collapse8" class=" collapse " aria-labelledby="heading8" data-bs-parent="#Description">
+                <div class="accordion-body">
+                    - Rim the glass with salt. It does not just look cute! The salt enhances the overall flavor of the
+                    drink. How to make the perfect salt rim? See below. <br>
+                    - Stir tequila, grapefruit, lime, and syrup in the glass. This cocktail is so simple, you do not
+                    even need to dirty up a cocktail shaker! Mix it all together in the glass.<br>
+                    - Add ice and top with soda water. Fill the glass with ice and top with soda water. A grapefruit
+                    wedge makes a nice garnish<br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
