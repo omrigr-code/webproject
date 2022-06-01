@@ -19,8 +19,8 @@ if (!empty($_SESSION["email"])) {
     <title>Register Page</title>
     <link rel="stylesheet" href="/css/register.css" />
     <link rel="stylesheet" href="/css/style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/82bc52e7cb.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
@@ -34,7 +34,7 @@ if (!empty($_SESSION["email"])) {
                 method: "POST",
                 cache: "false",
                 data: form,
-                complete: function (data) {
+                complete: function(data) {
                     console.log(data);
                     switch (data.status) {
                         case 200:
@@ -73,23 +73,19 @@ if (!empty($_SESSION["email"])) {
             </div>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email"
-                    maxlength="255">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" maxlength="255">
                 <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"
-                    minlength="8" maxlength="64">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" minlength="8" maxlength="64">
                 <label for="floatingPassword">Password</label>
             </div>
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingFirstName" placeholder="First Name"
-                    name="first_name" min="1" max="255">
+                <input type="text" class="form-control" id="floatingFirstName" placeholder="First Name" name="first_name" min="1" max="255">
                 <label for="floatingFirstName">First Name</label>
             </div>
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingLastName" placeholder="Last Name" name="last_name"
-                    min="1" max="255">
+                <input type="text" class="form-control" id="floatingLastName" placeholder="Last Name" name="last_name" min="1" max="255">
                 <label for="floatingLastName">Last Name</label>
             </div>
             <select class="form-select" aria-label="Default select example" name="sex">
@@ -98,8 +94,7 @@ if (!empty($_SESSION["email"])) {
                 <option value="Female">Female</option>
             </select>
             <div class="form-floating">
-                <input type="number" class="form-control" id="flaotingAge" placeholder="Age" name="age" min="1"
-                    max="130">
+                <input type="number" class="form-control" id="flaotingAge" placeholder="Age" name="age" min="1" max="130">
                 <label for="flaotingAge">Age</label>
             </div>
 

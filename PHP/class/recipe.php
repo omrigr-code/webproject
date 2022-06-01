@@ -12,9 +12,9 @@ class Recipe
 
     public function __construct($title, $description, $category)
     {
-        $this->$title = $title;
-        $this->$description = $description;
-        $this->$category = $category;
+        $this->title = $title;
+        $this->description = $description;
+        $this->category = $category;
     }
 
     static public function GetAllRecipesByCategory($database, $category)
@@ -33,6 +33,8 @@ class Recipe
             $recipe = new Recipe($recipeData[1], $recipeData[2], $recipeData[3]);
 
             $recipe->id = $recipeData[0];
+
+            $recipes[] = $recipe;
         }
 
         return $recipes;
@@ -40,7 +42,7 @@ class Recipe
 
     public function getHtml()
     {
-        $handle = curl_init("https://helloacm.com/api/markdown");
+        $handle = curl_init("https://helloacm.com/api/markdown/");
 
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, 1);
 
@@ -64,7 +66,7 @@ class Recipe
 
         curl_close($handle);
 
-        return $body;
+        return json_decode($body);
     }
 
     public function __get($property)
