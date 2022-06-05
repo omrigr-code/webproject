@@ -27,7 +27,7 @@ if (!empty($_SESSION["email"])) {
         function login(event) {
             event.preventDefault();
 
-            let form = $("#loginForm").serialize();
+            const form = $("#loginForm").serialize();
 
             $.ajax({
                 url: "/api/login.php",
@@ -35,7 +35,6 @@ if (!empty($_SESSION["email"])) {
                 cache: "false",
                 data: form,
                 complete: function(data) {
-                    console.log(data);
                     switch (data.status) {
                         case 200:
                             window.location.href = "/home.php";

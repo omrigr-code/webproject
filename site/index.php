@@ -27,7 +27,7 @@ if (!empty($_SESSION["email"])) {
         function register(event) {
             event.preventDefault();
 
-            let form = $("#registerForm").serialize();
+            const form = $("#registerForm").serialize();
 
             $.ajax({
                 url: "/api/register.php",

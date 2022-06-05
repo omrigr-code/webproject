@@ -23,7 +23,7 @@ if ($_POST) {
         die("Password is too short");
     }
 
-    $data[] = password_hash($_POST["password"], PASSWORD_BCRYPT);
+    $data[] = $_POST["password"];
 
     if (strlen($_POST["first_name"]) > 255) {
         header("Content-Type: text/plain", true, 400);

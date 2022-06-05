@@ -35,7 +35,26 @@ $tips = Tip::GetAllTips($database);
         }
 
         function saveReview() {
+            event.preventDefault();
+
             const form = $("#TipsForm").serialize();
+
+            $.ajax({
+                url: "/api/tip.php",
+                method: "POST",
+                cache: "false",
+                data: form,
+                complete: function(data) {
+                    switch (data.status) {
+                        case 200:
+                            alert(data.responseText);
+                            break;
+                        case 500:
+                            alert("Server side error");
+                            break;
+                    }
+                }
+            });
         }
     </script>
 </head>
@@ -75,9 +94,6 @@ $tips = Tip::GetAllTips($database);
         </div>
     </div>
 
-    <input type="hidden" id="score">
-    <input type="hidden" id="tip">
-
     <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -86,13 +102,15 @@ $tips = Tip::GetAllTips($database);
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form method="post" action="" id="TipsForm">
+                    <input type="hidden" id="score" name="score">
+                    <input type="hidden" id="tip" name="tip">
                     <div class="modal-body">
-                        <input type="text" id="Content" name="Content" placeholder="Please enter your comment">
+                        <input type="text" id="review" name="review" placeholder="Please enter your comment">
                     </div>
                 </form>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" name="submit" value="sendtip" onclick='sendform()'>Save Comment</button>
+                    <button type="button" class="btn btn-primary" value="sendtip" onclick='saveReview();'>Save Comment</button>
                 </div>
             </div>
         </div>
@@ -104,7 +122,7 @@ $tips = Tip::GetAllTips($database);
                 <div class="col-lg-4 col-md-12 column">
                     <img class="img-me" src="/images/tips/<?php echo ($tip->photo); ?>" alt="<?php echo ($tip->title); ?>" height="350">
                     <h1><?php echo ($tip->title); ?></h1>
-                    <p><?php echo ($tip->description); ?>.</p><br>
+                    <p><?php echo ($tip->description); ?></p><br>
                     <div class="Ranking_artical special">
                         <p>Rank this Tip</p>
                         <label> <i class="fa-solid fa-star">5</i><input type="radio" data-bs-toggle="modal" data-bs-target="#commentModal" onclick='saveScore(<?php echo ($tip->id); ?>, 5);' name="<?php echo ($tip->id); ?>" /> </label>

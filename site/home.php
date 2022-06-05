@@ -22,6 +22,33 @@ if (empty($_SESSION["email"])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/82bc52e7cb.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function sendForm() {
+            event.preventDefault();
+
+            const form = $("#contactForm").serialize();
+
+            $.ajax({
+                url: "/api/contact.php",
+                method: "POST",
+                cache: "false",
+                data: form,
+                complete: function(data) {
+                    switch (data.status) {
+                        case 200:
+                            alert(data.responseText);
+                            break;
+                        case 400:
+                            alert(data.responseText);
+                            break;
+                        case 500:
+                            alert("Server side error");
+                            break;
+                    }
+                }
+            });
+        }
+    </script>
 </head>
 
 <body>
@@ -162,14 +189,13 @@ if (empty($_SESSION["email"])) {
 
                 </div>
                 <div class="col-xl-6 col-md-12">
-                    <form class="newsForm" id="contentForm">
+                    <form class="newsForm" id="contactForm">
                         <h1 style="color: #CC4949; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
                             Contact Us! <i class="fa-solid fa-paper-plane"></i></h1> <br>
-                        <input name="FullName" type="text" class="feedback-input" placeholder="Full Name" />
-                        <input name="Email" type="text" class="feedback-input" placeholder="Email" />
-                        <textarea name="Subject" class="feedback-input" placeholder="Subject"></textarea>
-                        <button type="button" class="btn btn-secondary" onclick='sendform()'> Send </button>
-                        <input type="hidden" name="action" value="addContent">
+                        <input name="full_name" type="text" class="feedback-input" placeholder="Full Name" />
+                        <input name="email" type="text" class="feedback-input" placeholder="Email" />
+                        <textarea name="subject" class="feedback-input" placeholder="Subject"></textarea>
+                        <button type="button" class="btn btn-secondary" onclick='sendForm()'> Send </button>
                     </form>
                 </div>
             </div>

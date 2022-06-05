@@ -24,7 +24,7 @@ class Tip
     {
         $tips = [];
 
-        $result = $database->execute("SELECT * FROM tips");
+        $result = $database->execute("SELECT * FROM tips ORDER BY score DESC");
 
         if ($result->num_rows < 1) {
             return false;

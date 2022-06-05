@@ -45,7 +45,7 @@ class User
 
     public function verifyPassowrd($password)
     {
-        return password_verify($password, $this->password);
+        return $this->password === md5($this->id . $password);
     }
 
     public function save($database)
@@ -56,9 +56,15 @@ class User
             return false;
         }
 
+        $result = $database->execute("SELECT MAX(id) FROM users");
+
+        $userData = $result->fetch_row();
+
+        $salt = $userData[0] + 1;
+
         $database->execute("INSERT INTO users (email, password, first_name, last_name, sex, age) VALUES (
             '" . $this->email . "',
-            '" . $this->password . "',
+            '" . md5($salt . $this->password) . "',
             '" . $this->first_name . "',
             '" . $this->last_name . "',
             '" . $this->sex . "',
