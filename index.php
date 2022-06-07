@@ -30,7 +30,7 @@ if (!empty($_SESSION["email"])) {
             const form = $("#registerForm").serialize();
 
             $.ajax({
-                url: "/api/register.php",
+                url: "/includes/api/register.php",
                 method: "POST",
                 cache: "false",
                 data: form,
@@ -38,7 +38,7 @@ if (!empty($_SESSION["email"])) {
                     console.log(data);
                     switch (data.status) {
                         case 200:
-                            window.location.href = "/home.php";
+                            window.location.href = "/includes/home.php";
                             break;
                         case 400:
                             var alerts = $("<div></div>").appendTo("#alerts");
@@ -100,7 +100,7 @@ if (!empty($_SESSION["email"])) {
 
             <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
 
-            <a href="/login.php" class="mt-5 mb-3 text-muted">Login</a>
+            <a href="/includes/login.php" class="mt-5 mb-3 text-muted">Login</a>
         </form>
     </div>
 </body>

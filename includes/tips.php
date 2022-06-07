@@ -6,8 +6,8 @@ if (empty($_SESSION["email"])) {
     die("Protected Page");
 }
 
-require_once "../php/startup.php";
-require_once "../php/class/tip.php";
+require_once "startup.php";
+require_once "class/tip.php";
 
 $tips = Tip::GetAllTips($database);
 
@@ -40,7 +40,7 @@ $tips = Tip::GetAllTips($database);
             const form = $("#TipsForm").serialize();
 
             $.ajax({
-                url: "/api/tip.php",
+                url: "/includes/api/tip.php",
                 method: "POST",
                 cache: "false",
                 data: form,
@@ -74,20 +74,20 @@ $tips = Tip::GetAllTips($database);
                     <input type="checkbox" id="checkbox_toggle" />
                     <label for="checkbox_toggle" class="hamburger">&#9776;</label>
                     <div class="menu">
-                        <li><a href="/home.php">Home</a></li>
-                        <li><a href="/home.php#Idea">Idea</a></li>
-                        <li><a href="/home.php#About">About Us</a></li>
+                        <li><a href="/includes/includes/home.php">Home</a></li>
+                        <li><a href="/includes/home.php#Idea">Idea</a></li>
+                        <li><a href="/includes/home.php#About">About Us</a></li>
                         <li class="services">
                             <a>Recipes</a>
                             <ul class="dropdown1">
-                                <li><a href="/mexican.php">Mexican</a></li>
-                                <li><a href="/italy.php">Italian</a></li>
-                                <li><a href="/israel.php">Israeli</a></li>
+                                <li><a href="/includes/mexican.php">Mexican</a></li>
+                                <li><a href="/includes/italy.php">Italian</a></li>
+                                <li><a href="/includes/israel.php">Israeli</a></li>
                             </ul>
                         </li>
-                        <li><a href="/tips.php">Tips</a></li>
-                        <li><a href="/user.php">User Page</a></li>
-                        <li><a href="/api/logout.php">Logout</a></li>
+                        <li><a href="/includes/tips.php">Tips</a></li>
+                        <li><a href="/includes/user.php">User Page</a></li>
+                        <li><a href="/includes/api/logout.php">Logout</a></li>
                     </div>
                 </ul>
             </nav>

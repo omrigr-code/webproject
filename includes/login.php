@@ -30,14 +30,14 @@ if (!empty($_SESSION["email"])) {
             const form = $("#loginForm").serialize();
 
             $.ajax({
-                url: "/api/login.php",
+                url: "/includes/api/login.php",
                 method: "POST",
                 cache: "false",
                 data: form,
                 complete: function(data) {
                     switch (data.status) {
                         case 200:
-                            window.location.href = "/home.php";
+                            window.location.href = "/includes/home.php";
                             break;
                         case 400:
                             var alerts = $("<div></div>").appendTo("#alerts");

@@ -43,6 +43,13 @@ class User
         return $user;
     }
 
+    static public function countAllBySex($database, $sex)
+    {
+        $result = $database->execute("SELECT * FROM users WHERE sex='" . $sex . "'");
+
+        return $result->num_rows;
+    }
+
     public function verifyPassowrd($password)
     {
         return $this->password === md5($this->id . $password);

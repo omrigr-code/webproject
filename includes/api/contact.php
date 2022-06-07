@@ -1,7 +1,7 @@
 <?php
 
-require_once "../../php/startup.php";
-require_once "../../php/class/contact.php";
+require_once "../startup.php";
+require_once "../class/contact.php";
 
 if ($_POST) {
     if (strlen($_POST["email"]) > 255) {

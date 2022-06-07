@@ -8,4 +8,4 @@ session_regenerate_id();
 
 session_write_close();
 
-header("Location: /login.php", true, 302);
+header("Location: /includes/login.php", true, 302);

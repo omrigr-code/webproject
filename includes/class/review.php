@@ -58,8 +58,6 @@ class Review
 
         $finel_score = ($total / $result->num_rows);
 
-        var_dump($finel_score);
-
         $database->execute("UPDATE tips SET score='" . $finel_score . "' WHERE id=" . $this->tip_id . ";");
 
         return true;

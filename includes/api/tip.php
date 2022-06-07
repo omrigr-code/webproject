@@ -1,7 +1,7 @@
 <?php
 
-require_once "../../php/startup.php";
-require_once "../../php/class/review.php";
+require_once "../startup.php";
+require_once "../class/review.php";
 
 if ($_POST) {
     if ($_POST["score"] > 5 ||  1 > $_POST["score"]) {
