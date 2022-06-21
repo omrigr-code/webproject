@@ -76,7 +76,6 @@ class Recipe
         }
 
         $header_size = curl_getinfo($handle, CURLINFO_HEADER_SIZE);
-        $header = substr($response, 0, $header_size);
         $body = substr($response, $header_size);
 
         curl_close($handle);
@@ -105,7 +104,6 @@ class Recipe
         }
 
         $header_size = curl_getinfo($handle, CURLINFO_HEADER_SIZE);
-        $header = substr($response, 0, $header_size);
         $body = substr($response, $header_size);
 
         curl_close($handle);

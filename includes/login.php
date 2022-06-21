@@ -3,7 +3,7 @@
 session_start();
 
 if (!empty($_SESSION["email"])) {
-    header("Location: /home.php", true, 302);
+    header("Location: /index.php", true, 302);
     die();
 }
 

@@ -8,7 +8,7 @@ class Contact
 
     protected $full_name;
 
-    protected $rsubjecteview;
+    protected $subject;
 
     public function __construct($email, $full_name, $subject)
     {

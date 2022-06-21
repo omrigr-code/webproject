@@ -30,11 +30,31 @@ if ($_POST) {
         die("First name too long");
     }
 
+    if ($_POST["first_name"] == "") {
+        header("Content-Type: text/plain", true, 400);
+        die("First name can't be empty");
+    }
+
+    if (preg_match('~[0-9]+~', $_POST["first_name"])) {
+        header("Content-Type: text/plain", true, 400);
+        die("First name can't have numbers in it");
+    }
+
     $data[] = $_POST["first_name"];
 
     if (strlen($_POST["last_name"]) > 255) {
         header("Content-Type: text/plain", true, 400);
         die("Last name too long");
+    }
+
+    if ($_POST["last_name"] == "") {
+        header("Content-Type: text/plain", true, 400);
+        die("Last name can't be empty");
+    }
+
+    if (preg_match('~[0-9]+~', $_POST["last_name"])) {
+        header("Content-Type: text/plain", true, 400);
+        die("Last name can't have numbers in it");
     }
 
     $data[] = $_POST["last_name"];

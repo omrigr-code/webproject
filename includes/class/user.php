@@ -50,6 +50,15 @@ class User
         return $result->num_rows;
     }
 
+    static public function AvgAge($database)
+    {
+        $result = $database->execute("SELECT AVG(age) FROM users");
+
+        $data = $result->fetch_row();
+
+        return $data[0];
+    }
+
     public function verifyPassowrd($password)
     {
         return $this->password === md5($this->id . $password);

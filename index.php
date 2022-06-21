@@ -3,7 +3,7 @@
 session_start();
 
 if (!empty($_SESSION["email"])) {
-    header("Location: /home.php", true, 302);
+    header("Location: /includes/home.php", true, 302);
     die();
 }
 
@@ -47,6 +47,7 @@ if (!empty($_SESSION["email"])) {
                             alerts.attr("role", "alert");
 
                             alerts.text(data.responseText);
+
                             break;
                         case 500:
                             var alerts = $("<div></div>").appendTo("#alerts");
@@ -55,6 +56,7 @@ if (!empty($_SESSION["email"])) {
                             alerts.attr("role", "alert");
 
                             alerts.text("Server side error");
+
                             break;
                     }
                 }
@@ -100,7 +102,7 @@ if (!empty($_SESSION["email"])) {
 
             <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
 
-            <a href="/includes/login.php" class="mt-5 mb-3 text-muted">Login</a>
+            <a href="/includes/login.php" class="mt-5 mb-3 text-muted">Login if you already have a user</a>
         </form>
     </div>
 </body>

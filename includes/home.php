@@ -2,9 +2,15 @@
 
 session_start();
 
+require_once "startup.php";
+require_once "class/user.php";
+
 if (empty($_SESSION["email"])) {
+    header("Location: /index.php", true, 302);
     die("Protected Page");
 }
+
+$user = User::findByEmail($database, $_SESSION["email"]);
 
 ?>
 
@@ -26,7 +32,7 @@ if (empty($_SESSION["email"])) {
         function sendForm() {
             event.preventDefault();
 
-            const form = $("#contactForm").serialize();
+            var form = $("#contactForm").serializeArray();
 
             $.ajax({
                 url: "/includes/api/contact.php",
@@ -66,7 +72,7 @@ if (empty($_SESSION["email"])) {
                     <input type="checkbox" id="checkbox_toggle" />
                     <label for="checkbox_toggle" class="hamburger">&#9776;</label>
                     <div class="menu">
-                        <li><a href="/includes/includes/home.php">Home</a></li>
+                        <li><a href="/includes/home.php">Home</a></li>
                         <li><a href="/includes/home.php#Idea">Idea</a></li>
                         <li><a href="/includes/home.php#About">About Us</a></li>
                         <li class="services">
@@ -192,8 +198,8 @@ if (empty($_SESSION["email"])) {
                     <form class="newsForm" id="contactForm">
                         <h1 style="color: #CC4949; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
                             Contact Us! <i class="fa-solid fa-paper-plane"></i></h1> <br>
-                        <input name="full_name" type="text" class="feedback-input" placeholder="Full Name" />
-                        <input name="email" type="text" class="feedback-input" placeholder="Email" />
+                        <input name="full_name" type="text" class="feedback-input" placeholder="Full Name" value="<?php echo($user->first_name . " " . $user->last_name); ?>"/>
+                        <input name="email" type="text" class="feedback-input" placeholder="Email"  value="<?php echo($user->email); ?>"/>
                         <textarea name="subject" class="feedback-input" placeholder="Subject"></textarea>
                         <button type="button" class="btn btn-secondary" onclick='sendForm()'> Send </button>
                     </form>

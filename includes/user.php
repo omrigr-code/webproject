@@ -6,6 +6,7 @@ require_once "class/user.php";
 session_start();
 
 if (empty($_SESSION["email"])) {
+    header("Location: /index.php", true, 302);
     die("Protected Page");
 }
 
@@ -14,6 +15,8 @@ $user = User::findByEmail($database, $_SESSION["email"]);
 $females = User::countAllBySex($database, "Female");
 
 $males = User::countAllBySex($database, "Male");
+
+$age = User::AvgAge($database);
 
 ?>
 
@@ -62,6 +65,33 @@ $males = User::countAllBySex($database, "Male");
                 }
             });
         });
+        document.addEventListener("DOMContentLoaded", function() {
+            const ctx = document.getElementById('chart2').getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Avg age'],
+                    datasets: [{
+                        label: 'Users avg age',
+                        data: [<?php echo ($age); ?>],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
     </script>
 </head>
 
@@ -80,7 +110,7 @@ $males = User::countAllBySex($database, "Male");
                     <input type="checkbox" id="checkbox_toggle" />
                     <label for="checkbox_toggle" class="hamburger">&#9776;</label>
                     <div class="menu">
-                        <li><a href="/includes/includes/home.php">Home</a></li>
+                        <li><a href="/includes/home.php">Home</a></li>
                         <li><a href="/includes/home.php#Idea">Idea</a></li>
                         <li><a href="/includes/home.php#About">About Us</a></li>
                         <li class="services">
@@ -122,8 +152,13 @@ $males = User::countAllBySex($database, "Male");
             </li>
         </ul>
     </section>
-    <div>
-        <canvas id="chart" width="400" height="400"></canvas>
+    <div class="row">
+        <div class="col">
+            <canvas id="chart"></canvas>
+        </div>
+        <div class="col">
+            <canvas id="chart2"></canvas>
+        </div>
     </div>
 </body>
 

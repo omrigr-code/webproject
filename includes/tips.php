@@ -3,6 +3,7 @@
 session_start();
 
 if (empty($_SESSION["email"])) {
+    header("Location: /index.php", true, 302);
     die("Protected Page");
 }
 
@@ -48,6 +49,10 @@ $tips = Tip::GetAllTips($database);
                     switch (data.status) {
                         case 200:
                             alert(data.responseText);
+                            location.reload();
+                            break;
+                        case 400:
+                            alert(data.responseText);
                             break;
                         case 500:
                             alert("Server side error");
@@ -74,7 +79,7 @@ $tips = Tip::GetAllTips($database);
                     <input type="checkbox" id="checkbox_toggle" />
                     <label for="checkbox_toggle" class="hamburger">&#9776;</label>
                     <div class="menu">
-                        <li><a href="/includes/includes/home.php">Home</a></li>
+                        <li><a href="/includes/home.php">Home</a></li>
                         <li><a href="/includes/home.php#Idea">Idea</a></li>
                         <li><a href="/includes/home.php#About">About Us</a></li>
                         <li class="services">
@@ -124,6 +129,7 @@ $tips = Tip::GetAllTips($database);
                     <h1><?php echo ($tip->title); ?></h1>
                     <p><?php echo ($tip->description); ?></p><br>
                     <div class="Ranking_artical special">
+                        <h3>Avg score: <?php echo($tip->score); ?></h3>
                         <p>Rank this Tip</p>
                         <label> <i class="fa-solid fa-star">5</i><input type="radio" data-bs-toggle="modal" data-bs-target="#commentModal" onclick='saveScore(<?php echo ($tip->id); ?>, 5);' name="<?php echo ($tip->id); ?>" /> </label>
                         <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal" data-bs-target="#commentModal" onclick='saveScore(<?php echo ($tip->id); ?>, 4);' name="<?php echo ($tip->id); ?>" /> </label>

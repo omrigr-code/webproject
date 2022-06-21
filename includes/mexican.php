@@ -3,6 +3,7 @@
 session_start();
 
 if (empty($_SESSION["email"])) {
+    header("Location: /index.php", true, 302);
     die("Protected Page");
 }
 
@@ -45,7 +46,7 @@ $recipes = Recipe::GetAllRecipesByCategory($database, "mexican");
                     <input type="checkbox" id="checkbox_toggle" />
                     <label for="checkbox_toggle" class="hamburger">&#9776;</label>
                     <div class="menu">
-                        <li><a href="/includes/includes/home.php">Home</a></li>
+                        <li><a href="/includes/home.php">Home</a></li>
                         <li><a href="/includes/home.php#Idea">Idea</a></li>
                         <li><a href="/includes/home.php#About">About Us</a></li>
                         <li class="services">
