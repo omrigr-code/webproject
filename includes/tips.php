@@ -145,6 +145,7 @@ $tips = Tip::GetAllTips($database);
                 <?php $x++ ?>
                 <?php if ($x === 3) {
                     echo ("</div>");
+                    $x = 0;
                 } ?>
             <?php endforeach; ?>
         <?php endif; ?>
