@@ -157,7 +157,7 @@ $user = User::findByEmail($database, $_SESSION["email"]);
     </section>
 
     <section>
-        <div id="cocktails" style="border: solid 2px black; margin: 10px; text-align: center;">
+        <div id="cocktails">
 
         </div>
     </section>

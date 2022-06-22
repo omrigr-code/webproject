@@ -109,15 +109,19 @@
     opacity: 1
 }
 
-
-
-
 #Idea {
     width: 100%;
     float: left;
     height: auto;
     position: relative;
     background-color: whitesmoke;
+}
+
+#cocktails {
+    border: solid 2px black;
+    margin: 10px;
+    margin-left: 40%;
+    margin-right: 40%;
 }
 
 #Idea .Howheader {
