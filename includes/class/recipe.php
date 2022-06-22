@@ -72,7 +72,7 @@ class Recipe
         $response = curl_exec($handle);
 
         if (curl_getinfo($handle, CURLINFO_HTTP_CODE) !== 200) {
-            return false;
+            return "FAILED TO EXECUTE API";
         }
 
         $header_size = curl_getinfo($handle, CURLINFO_HEADER_SIZE);
