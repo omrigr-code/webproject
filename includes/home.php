@@ -43,6 +43,7 @@ $user = User::findByEmail($database, $_SESSION["email"]);
                     switch (data.status) {
                         case 200:
                             alert(data.responseText);
+                            location.reload();
                             break;
                         case 400:
                             alert(data.responseText);

@@ -122,6 +122,7 @@ $tips = Tip::GetAllTips($database);
     </div>
 
     <section id="Tips">
+        <div class="container-fluid">
         <?php $x = 0; ?>
         <?php if ($tips !== false) : ?>
             <?php foreach ($tips as $tip) : ?>
@@ -152,6 +153,7 @@ $tips = Tip::GetAllTips($database);
         <?php if ($x !== 0) {
             echo ("</div>");
         } ?>
+        </div>
     </section>
 
 </body>

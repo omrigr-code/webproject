@@ -40,20 +40,30 @@ if (!empty($_SESSION["email"])) {
                             window.location.href = "/includes/home.php";
                             break;
                         case 400:
-                            var alerts = $("<div></div>").appendTo("#alerts");
+                            var alert = $("<div></div>").appendTo("#alerts");
 
-                            alerts.attr("class", "alert alert-warning alert-dismissible fade show");
-                            alerts.attr("role", "alert");
+                            alert.attr("class", "alert alert-warning alert-dismissible fade show");
+                            alert.attr("role", "alert");
 
-                            alerts.text(data.responseText);
+                            setTimeout(() => {
+                                alert.remove();
+                            }, 2500);
+
+                            alert.text(data.responseText);
+
                             break;
                         case 500:
-                            var alerts = $("<div></div>").appendTo("#alerts");
+                            var alert = $("<div></div>").appendTo("#alerts");
 
-                            alerts.attr("class", "alert alert-danger alert-dismissible fade show");
-                            alerts.attr("role", "alert");
+                            alert.attr("class", "alert alert-danger alert-dismissible fade show");
+                            alert.attr("role", "alert");
 
-                            alerts.text("Server side error");
+                            setTimeout(() => {
+                                alert.remove();
+                            }, 2500);
+
+                            alert.text("Server side error");
+
                             break;
                     }
                 }
