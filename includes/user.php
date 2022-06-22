@@ -162,12 +162,14 @@ $age = User::AvgAge($database);
             </li>
         </ul>
     </section>
-    <div class="row">
-        <div class="col">
-            <canvas id="chart"></canvas>
-        </div>
-        <div class="col">
-            <canvas id="chart2"></canvas>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <canvas id="chart"></canvas>
+            </div>
+            <div class="col">
+                <canvas id="chart2"></canvas>
+            </div>
         </div>
     </div>
 </body>

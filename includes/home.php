@@ -55,6 +55,39 @@ $user = User::findByEmail($database, $_SESSION["email"]);
                 }
             });
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://cocktails3.p.rapidapi.com/random",
+                "method": "GET",
+                "headers": {
+                    "X-RapidAPI-Key": "<?php echo ($env["api_key"]) ?>",
+                    "X-RapidAPI-Host": "cocktails3.p.rapidapi.com"
+                }
+            };
+
+            $.ajax(settings).done(function(response) {
+                var cocktails = $("#cocktails");
+
+                if (response.success == true) {
+                    var header = $("<h3></h3>").appendTo(cocktails);
+
+                    header.text(response.body[0].name);
+
+                    var ol = $("<ol></ol>").appendTo(cocktails);
+
+                    for (const ing of response.body[0].ingredients) {
+                        var header = $("<li></li>").appendTo(ol);
+
+                        header.text(ing)
+                    }
+                } else {
+                    cocktails.text("Too many cocktails today! Get more tomorrow!");
+                }
+            });
+        });
     </script>
 </head>
 
@@ -120,6 +153,12 @@ $user = User::findByEmail($database, $_SESSION["email"]);
                     <img class="img-me" src="/images/Swiss House _ سويس هاوس.jpg">
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section>
+        <div id="cocktails" style="border: solid 2px black; margin: 10px; text-align: center;">
+
         </div>
     </section>
 
@@ -199,8 +238,8 @@ $user = User::findByEmail($database, $_SESSION["email"]);
                     <form class="newsForm" id="contactForm">
                         <h1 style="color: #CC4949; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
                             Contact Us! <i class="fa-solid fa-paper-plane"></i></h1> <br>
-                        <input name="full_name" type="text" class="feedback-input" placeholder="Full Name" value="<?php echo($user->first_name . " " . $user->last_name); ?>"/>
-                        <input name="email" type="text" class="feedback-input" placeholder="Email"  value="<?php echo($user->email); ?>"/>
+                        <input name="full_name" type="text" class="feedback-input" placeholder="Full Name" value="<?php echo ($user->first_name . " " . $user->last_name); ?>" />
+                        <input name="email" type="text" class="feedback-input" placeholder="Email" value="<?php echo ($user->email); ?>" />
                         <textarea name="subject" class="feedback-input" placeholder="Subject"></textarea>
                         <button type="button" class="btn btn-secondary" onclick='sendForm()'> Send </button>
                     </form>
@@ -208,7 +247,6 @@ $user = User::findByEmail($database, $_SESSION["email"]);
             </div>
         </div>
     </section>
-
 </body>
 
 </html>
