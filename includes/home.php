@@ -187,22 +187,22 @@ $user = User::findByEmail($database, $_SESSION["email"]);
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <img src="/images/first mealjpg.jpg" alt="firstmeal" style="width: 280px; height: 290px;">
+                    <img src="/images/first mealjpg.jpg" alt="firstmeal" class="image-static">
                     <h1>Starter</h1>
                     <p>The first course opens the meal and leaves a taste of more.</p>
                 </div>
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <img src="/images/second meal.png" alt="firstmeal" style="width: 280px; height: 290px;">
+                    <img src="/images/second meal.png" alt="firstmeal" class="image-static">
                     <h1>Main</h1>
                     <p>The main course is the center of the meal, and represents the kitchen in the best way.</p>
                 </div>
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <img src="/images/desert.png" alt="firstmeal" style="width: 280px; height: 290px;">
+                    <img src="/images/desert.png" alt="firstmeal" class="image-static">
                     <h1>Dessert</h1>
                     <p>The dessert closes the meal and leaves a sweet taste for a fantastic meal.</p>
                 </div>
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <img src="/images/Strawberry Cocktail_ Seven Year Itch.png" alt="firstmeal" style="width: 280px; height: 290px;">
+                    <img src="/images/Strawberry Cocktail_ Seven Year Itch.png" alt="firstmeal" class="image-static">
                     <h1>Cocktail</h1>
                     <p>The cocktail accompanies the meal throughout and balances all the dishes.</p>
                 </div>
@@ -236,7 +236,7 @@ $user = User::findByEmail($database, $_SESSION["email"]);
                 </div>
                 <div class="col-xl-6 col-md-12">
                     <form class="newsForm" id="contactForm">
-                        <h1 style="color: #CC4949; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <h1 class="h1-pretty">
                             Contact Us! <i class="fa-solid fa-paper-plane"></i></h1> <br>
                         <input name="full_name" type="text" class="feedback-input" placeholder="Full Name" value="<?php echo ($user->first_name . " " . $user->last_name); ?>" />
                         <input name="email" type="text" class="feedback-input" placeholder="Email" value="<?php echo ($user->email); ?>" />

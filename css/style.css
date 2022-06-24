@@ -273,3 +273,13 @@ textarea {
 [type="submit"]:hover {
     background: #CC4949;
 }
+
+.image-static {
+    width: 280px;
+    height: 290px;
+}
+
+.h1-pretty {
+    color: #CC4949;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
