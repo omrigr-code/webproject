@@ -8,12 +8,7 @@ if ($_POST) {
         header("Content-Type: text/plain", true, 400);
         die("Score invalid range");
     }
-
-    if ($_POST["review"] == "") {
-        header("Content-Type: text/plain", true, 400);
-        die("Review is too short");
-    }
-
+    
     if (strlen($_POST["review"]) > 255) {
         header("Content-Type: text/plain", true, 400);
         die("Review too long");
