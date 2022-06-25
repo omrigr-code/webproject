@@ -66,76 +66,78 @@ $recipes = Recipe::GetAllRecipesByCategory($database, "israel");
         </div>
     </div>
 
-    <h1>Israel Recepies</h1>
+    <main>
+        <h1>Israel Recepies</h1>
 
-    <?php if ($recipes !== false) : ?>
-        <?php foreach ($recipes as $recipe) : ?>
-            <div class="recipe-card">
-                <section id="head">
-                    <div class="container-fluid">
-                        <div class="row rowwidth">
-                            <div class="col-lg-6 col-md-12">
-                                <h1><?php echo ($recipe->title); ?></h1>
-                                <p><?php echo ($recipe->description); ?></p>
-                            </div>
-                            <div class="col-lg-6 col-md-12">
-                                <img class="img-me" src="/images/recipes/israel/<?php echo ($recipe->id . ".png"); ?>" alt="main picture" height="700">
+        <?php if ($recipes !== false) : ?>
+            <?php foreach ($recipes as $recipe) : ?>
+                <div class="recipe-card">
+                    <section id="head">
+                        <div class="container-fluid">
+                            <div class="row rowwidth">
+                                <div class="col-lg-6 col-md-12">
+                                    <h1><?php echo ($recipe->title); ?></h1>
+                                    <p><?php echo ($recipe->description); ?></p>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <img class="img-me" src="/images/recipes/israel/<?php echo ($recipe->id . ".png"); ?>" alt="main picture" height="700">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-                <section id="info">
-                    <div class="container-fluid">
-                        <div class="row ">
-                            <div class="col-xl-4 col-lg-12 col-md-12 box">
-                                <img class="img-me" src="/images\Ingridients.jpeg" alt="main picture">
-                                <h6>Ingredients</h6>
-                                <p><?php echo ($recipe->ingredients_count); ?></p>
-                            </div>
-                            <div class="col-xl-4 col-lg-12 col-md-12 box">
-                                <img class="img-me" src="/images\Time.jpeg" alt="main picture">
-                                <h6>Total time</h6>
-                                <p><?php echo ($recipe->total_time); ?></p>
-                            </div>
-                            <div class="col-xl-4 col-lg-12 col-md-12 box">
-                                <img class="img-me" src="/images\Difficulty.jpeg" alt="main picture">
-                                <h6>Difficulty</h6>
-                                <p><?php echo ($recipe->difficulty); ?></p>
-                            </div>
+                    </section>
+                    <section id="info">
+                        <div class="container-fluid">
+                            <div class="row ">
+                                <div class="col-xl-4 col-lg-12 col-md-12 box">
+                                    <img class="img-me" src="/images\Ingridients.jpeg" alt="main picture">
+                                    <h6>Ingredients</h6>
+                                    <p><?php echo ($recipe->ingredients_count); ?></p>
+                                </div>
+                                <div class="col-xl-4 col-lg-12 col-md-12 box">
+                                    <img class="img-me" src="/images\Time.jpeg" alt="main picture">
+                                    <h6>Total time</h6>
+                                    <p><?php echo ($recipe->total_time); ?></p>
+                                </div>
+                                <div class="col-xl-4 col-lg-12 col-md-12 box">
+                                    <img class="img-me" src="/images\Difficulty.jpeg" alt="main picture">
+                                    <h6>Difficulty</h6>
+                                    <p><?php echo ($recipe->difficulty); ?></p>
+                                </div>
 
-                        </div>
-                    </div>
-
-                </section>
-                <div class="accordion" id="Description">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                Ingredients
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class=" collapse " aria-labelledby="headingOne" data-bs-parent="#Description">
-                            <div class="accordion-body">
-                                <?php echo ($recipe->getHtmlIngredients()); ?>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                preparation method
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#Description">
-                            <div class="accordion-body">
-                                <?php echo ($recipe->getHtmlPreparationMethod()); ?>
+
+                    </section>
+                    <div class="accordion" id="Description">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    Ingredients
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class=" collapse " aria-labelledby="headingOne" data-bs-parent="#Description">
+                                <div class="accordion-body">
+                                    <?php echo ($recipe->getHtmlIngredients()); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    preparation method
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#Description">
+                                <div class="accordion-body">
+                                    <?php echo ($recipe->getHtmlPreparationMethod()); ?>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
-    <?php endif; ?>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </main>
 </body>
 
 </html>

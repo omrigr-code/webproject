@@ -140,28 +140,31 @@ $age = User::AvgAge($database);
         </div>
     </div>
 
-    <section id="home">
-        <ul class="list-group">
-            <li class="list-group-item">
-                User ID: <?php echo ($user->id); ?>
-            </li>
-            <li class="list-group-item">
-                User Email: <?php echo ($user->email); ?>
-            </li>
-            <li class="list-group-item">
-                User First Name: <?php echo ($user->first_name); ?>
-            </li>
-            <li class="list-group-item">
-                User Last Name: <?php echo ($user->last_name); ?>
-            </li>
-            <li class="list-group-item">
-                User Sex: <?php echo ($user->sex); ?>
-            </li>
-            <li class="list-group-item">
-                User Age: <?php echo ($user->age); ?>
-            </li>
-        </ul>
-    </section>
+    <main>
+        <section id="home">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    User ID: <?php echo ($user->id); ?>
+                </li>
+                <li class="list-group-item">
+                    User Email: <?php echo ($user->email); ?>
+                </li>
+                <li class="list-group-item">
+                    User First Name: <?php echo ($user->first_name); ?>
+                </li>
+                <li class="list-group-item">
+                    User Last Name: <?php echo ($user->last_name); ?>
+                </li>
+                <li class="list-group-item">
+                    User Sex: <?php echo ($user->sex); ?>
+                </li>
+                <li class="list-group-item">
+                    User Age: <?php echo ($user->age); ?>
+                </li>
+            </ul>
+        </section>
+    </main>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col">

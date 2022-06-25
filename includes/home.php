@@ -126,98 +126,100 @@ $user = User::findByEmail($database, $_SESSION["email"]);
         </div>
     </div>
 
-    <section id="home">
-        <div class="container-fluid">
-            <div class="row rowwidth">
-                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                    <img class="img-me" src="/images/cookie-recipes1.jpg">
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                    <div class="img-me center">
-                        <h1 id="first">The Master's</h1>
-                        <h5 id="first1">Leading To Tastier World</h5>
-                        <a href="#Idea"><button class="btn">Learn More </button></a>
-                        <div class="arrow">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+    <main>
+        <section id="home">
+            <div class="container-fluid">
+                <div class="row rowwidth">
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                        <img class="img-me" src="/images/cookie-recipes1.jpg">
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                        <div class="img-me center">
+                            <h1 id="first">The Master's</h1>
+                            <h5 id="first1">Leading To Tastier World</h5>
+                            <a href="#Idea"><button class="btn">Learn More </button></a>
+                            <div class="arrow">
+                                <span></span>
+                                <span></span>
+                                <span></span>
 
+                            </div>
+                        </div>
+                        <h5 class="center" id="first2">See The Master's in action</h5>
+                        <video width="500" height="340" autoplay loop class="centerAudio">
+                            <source src="/images/videoplayback.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                        <img class="img-me" src="/images/Swiss House _ سويس هاوس.jpg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div id="cocktails">
+
+            </div>
+        </section>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="div">
+
+                </div>
+            </div>
+        </div>
+
+        <section id="Idea">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="Howheader">
+                            <h1>How Does It Work</h1>
+                            <p>Want to cook your own perfect meal ?!
+                                On our site you can get different and varied recipes</p>
                         </div>
                     </div>
-                    <h5 class="center" id="first2">See The Master's in action</h5>
-                    <video width="500" height="340" autoplay loop class="centerAudio">
-                        <source src="/images/videoplayback.mp4" type="video/mp4">
-                    </video>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                    <img class="img-me" src="/images/Swiss House _ سويس هاوس.jpg">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div id="cocktails">
-
-        </div>
-    </section>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="div">
 
             </div>
-        </div>
-    </div>
 
-    <section id="Idea">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="Howheader">
-                        <h1>How Does It Work</h1>
-                        <p>Want to cook your own perfect meal ?!
-                            On our site you can get different and varied recipes</p>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                        <img src="/images/first mealjpg.jpg" alt="firstmeal" class="image-static">
+                        <h1>Starter</h1>
+                        <p>The first course opens the meal and leaves a taste of more.</p>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                        <img src="/images/second meal.png" alt="firstmeal" class="image-static">
+                        <h1>Main</h1>
+                        <p>The main course is the center of the meal, and represents the kitchen in the best way.</p>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                        <img src="/images/desert.png" alt="firstmeal" class="image-static">
+                        <h1>Dessert</h1>
+                        <p>The dessert closes the meal and leaves a sweet taste for a fantastic meal.</p>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                        <img src="/images/Strawberry Cocktail_ Seven Year Itch.png" alt="firstmeal" class="image-static">
+                        <h1>Cocktail</h1>
+                        <p>The cocktail accompanies the meal throughout and balances all the dishes.</p>
                     </div>
                 </div>
             </div>
 
-        </div>
+        </section>
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <img src="/images/first mealjpg.jpg" alt="firstmeal" class="image-static">
-                    <h1>Starter</h1>
-                    <p>The first course opens the meal and leaves a taste of more.</p>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <img src="/images/second meal.png" alt="firstmeal" class="image-static">
-                    <h1>Main</h1>
-                    <p>The main course is the center of the meal, and represents the kitchen in the best way.</p>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <img src="/images/desert.png" alt="firstmeal" class="image-static">
-                    <h1>Dessert</h1>
-                    <p>The dessert closes the meal and leaves a sweet taste for a fantastic meal.</p>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <img src="/images/Strawberry Cocktail_ Seven Year Itch.png" alt="firstmeal" class="image-static">
-                    <h1>Cocktail</h1>
-                    <p>The cocktail accompanies the meal throughout and balances all the dishes.</p>
+                <div class="div">
+
                 </div>
             </div>
         </div>
-
-    </section>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="div">
-
-            </div>
-        </div>
-    </div>
+    </main>
 
     <section id="About">
         <div class="container-fluid">

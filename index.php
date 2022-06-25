@@ -74,45 +74,47 @@ if (!empty($_SESSION["email"])) {
 </head>
 
 <body>
-    <div class="form-signin w-100 m-auto text-center">
-        <form onsubmit="register(event);" id="registerForm">
-            <h1 class="h3 mb-3 fw-normal">Please Register</h1>
+    <main>
+        <div class="form-signin w-100 m-auto text-center">
+            <form onsubmit="register(event);" id="registerForm">
+                <h1 class="h3 mb-3 fw-normal">Please Register</h1>
 
-            <div id="alerts">
+                <div id="alerts">
 
-            </div>
+                </div>
 
-            <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" maxlength="255">
-                <label for="floatingInput">Email address</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" minlength="8" maxlength="64">
-                <label for="floatingPassword">Password</label>
-            </div>
-            <div class="form-floating">
-                <input type="text" class="form-control" id="floatingFirstName" placeholder="First Name" name="first_name" min="1" max="255">
-                <label for="floatingFirstName">First Name</label>
-            </div>
-            <div class="form-floating">
-                <input type="text" class="form-control" id="floatingLastName" placeholder="Last Name" name="last_name" min="1" max="255">
-                <label for="floatingLastName">Last Name</label>
-            </div>
-            <select class="form-select" aria-label="Default select example" name="sex">
-                <option selected>Open this select menu</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
-            <div class="form-floating">
-                <input type="number" class="form-control" id="flaotingAge" placeholder="Age" name="age" min="1" max="130">
-                <label for="flaotingAge">Age</label>
-            </div>
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" maxlength="255">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" minlength="8" maxlength="64">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingFirstName" placeholder="First Name" name="first_name" min="1" max="255">
+                    <label for="floatingFirstName">First Name</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingLastName" placeholder="Last Name" name="last_name" min="1" max="255">
+                    <label for="floatingLastName">Last Name</label>
+                </div>
+                <select class="form-select" aria-label="Default select example" name="sex">
+                    <option selected>Open this select menu</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <div class="form-floating">
+                    <input type="number" class="form-control" id="flaotingAge" placeholder="Age" name="age" min="1" max="130">
+                    <label for="flaotingAge">Age</label>
+                </div>
 
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
 
-            <a href="/includes/login.php" class="mt-5 mb-3 text-muted">Login if you already have a user</a>
-        </form>
-    </div>
+                <a href="/includes/login.php" class="mt-5 mb-3 text-muted">Login if you already have a user</a>
+            </form>
+        </div>
+    </main>
 </body>
 
 </html>

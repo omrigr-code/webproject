@@ -121,40 +121,42 @@ $tips = Tip::GetAllTips($database);
         </div>
     </div>
 
-    <section id="Tips">
-        <div class="container-fluid">
-        <?php $x = 0; ?>
-        <?php if ($tips !== false) : ?>
-            <?php foreach ($tips as $tip) : ?>
-                <?php if ($x === 0) {
-                    echo ("<div class=\"row\">");
-                } ?>
-                <div class="col-lg-4 col-md-12 column">
-                    <img class="img-me" src="/images/tips/<?php echo ($tip->photo); ?>" alt="<?php echo ($tip->title); ?>" height="350">
-                    <h1><?php echo ($tip->title); ?></h1>
-                    <p><?php echo ($tip->description); ?></p><br>
-                    <div class="Ranking_artical special">
-                        <h3>Avg score: <?php echo ($tip->score); ?></h3>
-                        <p>Rank this Tip</p>
-                        <label> <i class="fa-solid fa-star">5</i><input type="radio" data-bs-toggle="modal" data-bs-target="#commentModal" onclick='saveScore(<?php echo ($tip->id); ?>, 5);' name="<?php echo ($tip->id); ?>" /> </label>
-                        <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal" data-bs-target="#commentModal" onclick='saveScore(<?php echo ($tip->id); ?>, 4);' name="<?php echo ($tip->id); ?>" /> </label>
-                        <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal" data-bs-target="#commentModal" onclick='saveScore(<?php echo ($tip->id); ?>, 3);' name="<?php echo ($tip->id); ?>" /> </label>
-                        <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal" data-bs-target="#commentModal" onclick='saveScore(<?php echo ($tip->id); ?>, 2);' name="<?php echo ($tip->id); ?>" /> </label>
-                        <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal" data-bs-target="#commentModal" onclick='saveScore(<?php echo ($tip->id); ?>, 1);' name="<?php echo ($tip->id); ?>" /> </label>
-                    </div>
-                </div>
-                <?php $x++ ?>
-                <?php if ($x === 3) {
+    <main>
+        <section id="Tips">
+            <div class="container-fluid">
+                <?php $x = 0; ?>
+                <?php if ($tips !== false) : ?>
+                    <?php foreach ($tips as $tip) : ?>
+                        <?php if ($x === 0) {
+                            echo ("<div class=\"row\">");
+                        } ?>
+                        <div class="col-lg-4 col-md-12 column">
+                            <img class="img-me" src="/images/tips/<?php echo ($tip->photo); ?>" alt="<?php echo ($tip->title); ?>" height="350">
+                            <h1><?php echo ($tip->title); ?></h1>
+                            <p><?php echo ($tip->description); ?></p><br>
+                            <div class="Ranking_artical special">
+                                <h3>Avg score: <?php echo ($tip->score); ?></h3>
+                                <p>Rank this Tip</p>
+                                <label> <i class="fa-solid fa-star">5</i><input type="radio" data-bs-toggle="modal" data-bs-target="#commentModal" onclick='saveScore(<?php echo ($tip->id); ?>, 5);' name="<?php echo ($tip->id); ?>" /> </label>
+                                <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal" data-bs-target="#commentModal" onclick='saveScore(<?php echo ($tip->id); ?>, 4);' name="<?php echo ($tip->id); ?>" /> </label>
+                                <label> <i class="fa-solid fa-star">3</i><input type="radio" data-bs-toggle="modal" data-bs-target="#commentModal" onclick='saveScore(<?php echo ($tip->id); ?>, 3);' name="<?php echo ($tip->id); ?>" /> </label>
+                                <label> <i class="fa-solid fa-star">2</i><input type="radio" data-bs-toggle="modal" data-bs-target="#commentModal" onclick='saveScore(<?php echo ($tip->id); ?>, 2);' name="<?php echo ($tip->id); ?>" /> </label>
+                                <label> <i class="fa-solid fa-star">1</i><input type="radio" data-bs-toggle="modal" data-bs-target="#commentModal" onclick='saveScore(<?php echo ($tip->id); ?>, 1);' name="<?php echo ($tip->id); ?>" /> </label>
+                            </div>
+                        </div>
+                        <?php $x++ ?>
+                        <?php if ($x === 3) {
+                            echo ("</div>");
+                            $x = 0;
+                        } ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+                <?php if ($x !== 0) {
                     echo ("</div>");
-                    $x = 0;
                 } ?>
-            <?php endforeach; ?>
-        <?php endif; ?>
-        <?php if ($x !== 0) {
-            echo ("</div>");
-        } ?>
-        </div>
-    </section>
+            </div>
+        </section>
+    </main>
 
 </body>
 
