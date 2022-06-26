@@ -48,7 +48,7 @@ class Review
             '" . $this->review . "'
         );");
 
-        $result = $database->execute("SELECT score FROM reviews");
+        $result = $database->execute("SELECT score FROM reviews WHERE tip_id=" . $this->tip_id);
 
         $total = 0;
 
