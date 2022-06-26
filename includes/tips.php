@@ -136,6 +136,7 @@ $tips = Tip::GetAllTips($database);
                             <p><?php echo ($tip->description); ?></p><br>
                             <div class="Ranking_artical special">
                                 <h3>Avg score: <?php echo ($tip->score); ?></h3>
+                                <h3>Last comment: <?php echo ($tip->GetLastComment($database)); ?></h3>
                                 <p>Rank this Tip</p>
                                 <label> <i class="fa-solid fa-star">5</i><input type="radio" data-bs-toggle="modal" data-bs-target="#commentModal" onclick='saveScore(<?php echo ($tip->id); ?>, 5);' name="<?php echo ($tip->id); ?>" /> </label>
                                 <label> <i class="fa-solid fa-star">4</i><input type="radio" data-bs-toggle="modal" data-bs-target="#commentModal" onclick='saveScore(<?php echo ($tip->id); ?>, 4);' name="<?php echo ($tip->id); ?>" /> </label>

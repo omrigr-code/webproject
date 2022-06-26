@@ -43,6 +43,17 @@ class Tip
         return $tips;
     }
 
+    public function GetLastComment($database)
+    {
+        $result = $database->execute("SELECT review FROM reviews WHERE tip_id=" . $this->id . " ORDER BY id DESC LIMIT 1");
+
+        if ($result->num_rows !== 1) {
+            return false;
+        }
+
+        return $result->fetch_row()[0];
+    }
+
     public function __get($property)
     {
         if (property_exists($this, $property)) {
